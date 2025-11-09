@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net9.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UseWPF>true</UseWPF>
+		<UserSecretsId>a0069cda-67e5-49f1-acc8-f8f1f752fe47</UserSecretsId>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.3.1" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.10" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.10" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.10">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.10">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.10" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.10" />
+		<PackageReference Include="Microsoft.Extensions.Identity.Core" Version="9.0.10" />
+		<PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="9.0.10" />
+		<PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.10" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\MijnBibliotheekModels\MijnBibliotheekModels.csproj" />
+	</ItemGroup>
+
+</Project>

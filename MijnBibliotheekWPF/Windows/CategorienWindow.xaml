@@ -1,0 +1,28 @@
+﻿<Window x:Class="MijnBibliotheekWPF.Windows.CategorienWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Categorieën" Height="420" Width="520" WindowStartupLocation="CenterScreen">
+
+    <DockPanel Margin="10">
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="0 0 0 8">
+            <TextBox x:Name="NaamBox" Width="260"/>
+            <Button x:Name="AddBtn" Content="Toevoegen" Click="Add_Click" Margin="6 0"/>
+            <Button Content="Verversen" Click="Refresh_Click"/>
+        </StackPanel>
+
+        <DataGrid x:Name="Grid" AutoGenerateColumns="False" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Naam" Binding="{Binding Naam}" Width="*"/>
+
+                <DataGridTemplateColumn Header="Verwijder" x:Name="DeleteColumn" Width="90">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="X" Foreground="Red" Tag="{Binding}" Click="Delete_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</Window>

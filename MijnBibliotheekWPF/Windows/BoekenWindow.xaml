@@ -1,0 +1,41 @@
+﻿<Window x:Class="MijnBibliotheekWPF.Windows.BoekenWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Boekenbeheer" Height="520" Width="900" WindowStartupLocation="CenterScreen">
+
+    <DockPanel Margin="10">
+
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="0 0 0 8">
+            <Label Content="Categorie:"/>
+            <ComboBox x:Name="CatFilter" Width="180" Margin="6 0" DisplayMemberPath="Naam" SelectionChanged="CatFilter_SelectionChanged"/>
+
+            <Label Content="Zoek:" Margin="12 0 0 0"/>
+            <TextBox x:Name="ZoekBox" Width="240" TextChanged="ZoekBox_TextChanged"/>
+
+            <Button x:Name="NieuwBtn" Content="Nieuw Boek" Margin="20 0" Click="Nieuw_Click"/>
+            <Button x:Name="OpslaanBtn" Content="Opslaan" Margin="6 0" Click="Opslaan_Click"/>
+            <Button Content="Verversen" Margin="6 0" Click="Refresh_Click"/>
+        </StackPanel>
+
+        <DataGrid x:Name="Grid" AutoGenerateColumns="False" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Titel" Binding="{Binding Titel}" Width="2*"/>
+                <DataGridTextColumn Header="Auteur" Binding="{Binding Auteur}" Width="2*"/>
+                <DataGridTextColumn Header="ISBN" Binding="{Binding ISBN}" Width="*"/>
+                <DataGridCheckBoxColumn Header="Beschikbaar" Binding="{Binding IsBeschikbaar}" Width="100"/>
+
+                <DataGridComboBoxColumn x:Name="ColCategorie" Header="Categorie" SelectedValuePath="Id" SelectedValueBinding="{Binding CategorieId}" DisplayMemberPath="Naam" Width="180"/>
+
+                <DataGridTemplateColumn Header="Verwijderen" x:Name="DeleteColumn" Width="90">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="X" Foreground="Red" Tag="{Binding}" Click="Delete_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </DockPanel>
+</Window>

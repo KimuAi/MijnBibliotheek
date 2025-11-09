@@ -1,0 +1,14 @@
+C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekModels\bin\Debug\net9.0\MijnBibliotheekModels.deps.json
+C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekModels\bin\Debug\net9.0\MijnBibliotheekModels.runtimeconfig.json
+C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekModels\bin\Debug\net9.0\MijnBibliotheekModels.dll
+C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekModels\bin\Debug\net9.0\MijnBibliotheekModels.pdb
+C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekModels\obj\Debug\net9.0\MijnBibliotheekModels.csproj.AssemblyReference.cache
+C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekModels\obj\Debug\net9.0\MijnBibliotheekModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekModels\obj\Debug\net9.0\MijnBibliotheekModels.AssemblyInfoInputs.cache
+C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekModels\obj\Debug\net9.0\MijnBibliotheekModels.AssemblyInfo.cs
+C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekModels\obj\Debug\net9.0\MijnBibliotheekModels.csproj.CoreCompileInputs.cache
+C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekModels\obj\Debug\net9.0\MijnBibliotheekModels.dll
+C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekModels\obj\Debug\net9.0\refint\MijnBibliotheekModels.dll
+C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekModels\obj\Debug\net9.0\MijnBibliotheekModels.pdb
+C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekModels\obj\Debug\net9.0\MijnBibliotheekModels.genruntimeconfig.cache
+C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekModels\obj\Debug\net9.0\ref\MijnBibliotheekModels.dll

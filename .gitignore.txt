@@ -1,0 +1,22 @@
+# VS / .NET – alleen broncode volgen
+# Solution & project blijven zichtbaar; build/IDE mappen niet.
+
+# IDE
+.vs/
+*.user
+*.suo
+
+# Build output (in alle submappen)
+**/bin/
+**/obj/
+**/Debug/
+**/Release/
+
+# Overig rommel
+*.cache
+*.pdb
+*.db
+*.log
+
+# NuGet (optioneel)
+packages/
