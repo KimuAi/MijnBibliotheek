@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "MijnBibliotheekMAUI\\MijnBibliotheekMAUI.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

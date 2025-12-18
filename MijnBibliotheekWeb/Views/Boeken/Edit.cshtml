@@ -1,0 +1,45 @@
+﻿@model MijnBibliotheekWeb.ViewModels.BoekEditVm
+@{
+    ViewData["Title"] = "Boek bewerken";
+}
+
+<h2>Boek bewerken</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="mb-3">
+        <label class="form-label">Titel</label>
+        <input class="form-control" asp-for="Titel" />
+        <span class="text-danger" asp-validation-for="Titel"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Auteur</label>
+        <input class="form-control" asp-for="Auteur" />
+        <span class="text-danger" asp-validation-for="Auteur"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">ISBN</label>
+        <input class="form-control" asp-for="ISBN" />
+        <span class="text-danger" asp-validation-for="ISBN"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Categorie</label>
+        <select class="form-select" asp-for="CategorieId" asp-items="ViewBag.Cats"></select>
+    </div>
+
+    <div class="form-check mb-3">
+        <input class="form-check-input" asp-for="IsBeschikbaar" />
+        <label class="form-check-label" asp-for="IsBeschikbaar">Beschikbaar</label>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Opslaan</button>
+    <a class="btn btn-secondary" asp-action="Index">Terug</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -55,6 +55,7 @@ C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekWPF\bin\Debug\net9.0-
 C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekWPF\bin\Debug\net9.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
 C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekWPF\bin\Debug\net9.0-windows\Microsoft.Extensions.Hosting.dll
 C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekWPF\bin\Debug\net9.0-windows\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekWPF\bin\Debug\net9.0-windows\Microsoft.Extensions.Http.dll
 C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekWPF\bin\Debug\net9.0-windows\Microsoft.Extensions.Identity.Core.dll
 C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekWPF\bin\Debug\net9.0-windows\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekWPF\bin\Debug\net9.0-windows\Microsoft.Extensions.Logging.dll
@@ -190,6 +191,7 @@ C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekWPF\obj\Debug\net9.0-
 C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekWPF\obj\Debug\net9.0-windows\MijnBibliotheekWPF.AssemblyInfoInputs.cache
 C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekWPF\obj\Debug\net9.0-windows\MijnBibliotheekWPF.AssemblyInfo.cs
 C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekWPF\obj\Debug\net9.0-windows\MijnBibliotheekWPF.csproj.CoreCompileInputs.cache
+C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekWPF\obj\Debug\net9.0-windows\MijnBibliotheekWPF.sourcelink.json
 C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekWPF\obj\Debug\net9.0-windows\MijnBibl.5BBC730D.Up2Date
 C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekWPF\obj\Debug\net9.0-windows\MijnBibliotheekWPF.dll
 C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekWPF\obj\Debug\net9.0-windows\refint\MijnBibliotheekWPF.dll

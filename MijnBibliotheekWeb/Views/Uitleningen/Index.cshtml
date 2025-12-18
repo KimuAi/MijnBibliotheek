@@ -1,0 +1,51 @@
+﻿@model List<MijnBibliotheekModels.Models.Uitlening>
+@{
+    ViewData["Title"] = "Uitleningen";
+    bool canEdit = User.IsInRole("Admin") || User.IsInRole("Medewerker");
+}
+
+<h2>Uitleningen</h2>
+
+@if (canEdit)
+{
+    <a class="btn btn-primary mb-3" asp-action="Create">Nieuwe uitlening</a>
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Boek</th>
+            <th>Lid</th>
+            <th>Start</th>
+            <th>Eind</th>
+            <th>Terug</th>
+            @if (canEdit)
+            {
+                <th>Acties</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var u in Model)
+        {
+            <tr>
+                <td>@u.Boek?.Titel</td>
+                <td>@u.AppUser?.VolledigeNaam</td>
+                <td>@u.StartDatum.ToString("dd/MM/yyyy")</td>
+                <td>@(u.EindDatum?.ToString("dd/MM/yyyy") ?? "-")</td>
+                <td>@(u.IsTeruggebracht ? "Ja" : "Nee")</td>
+                @if (canEdit)
+                {
+                    <td>
+                        @if (!u.IsTeruggebracht)
+                        {
+                            <form asp-action="Terug" asp-route-id="@u.Id" method="post">
+                                <button class="btn btn-sm btn-outline-success" type="submit">Terugbrengen</button>
+                            </form>
+                        }
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>

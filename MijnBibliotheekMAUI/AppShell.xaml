@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:pages="clr-namespace:MijnBibliotheekMAUI.Pages"
+       x:Class="MijnBibliotheekMAUI.AppShell">
+
+    <Shell.ToolbarItems>
+        <ToolbarItem Text="Logout" Clicked="Logout_Clicked" />
+    </Shell.ToolbarItems>
+
+    <TabBar>
+        <ShellContent Title="Boeken" ContentTemplate="{DataTemplate pages:BoekenPage}" />
+        <ShellContent Title="Categorieën" ContentTemplate="{DataTemplate pages:CategorieenPage}" />
+        <ShellContent Title="Uitleningen" ContentTemplate="{DataTemplate pages:UitleningenPage}" />
+    </TabBar>
+
+</Shell>

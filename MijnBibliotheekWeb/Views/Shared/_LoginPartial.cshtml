@@ -1,0 +1,28 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using MijnBibliotheekModels.Identity
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+
+<ul class="navbar-nav">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <li class="nav-item">
+            <span class="nav-link text-dark">Hallo, @User.Identity?.Name</span>
+        </li>
+        <li class="nav-item">
+            <form class="d-inline" asp-controller="Account" asp-action="Logout" method="post">
+                @Html.AntiForgeryToken()
+                <button type="submit" class="btn btn-sm btn-outline-danger">Uitloggen</button>
+            </form>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+            <a class="btn btn-sm btn-outline-primary" href="/Identity/Account/Login">Inloggen</a>
+        </li>
+        <li class="nav-item ms-2">
+            <a class="btn btn-sm btn-outline-secondary" href="/Identity/Account/Register">Registreren</a>
+        </li>
+    }
+</ul>

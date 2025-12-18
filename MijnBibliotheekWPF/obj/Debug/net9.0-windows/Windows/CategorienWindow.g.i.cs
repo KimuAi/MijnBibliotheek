@@ -84,7 +84,7 @@ namespace MijnBibliotheekWPF.Windows {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MijnBibliotheekWPF;V1.0.0.0;component/windows/categorienwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MijnBibliotheekWPF;component/windows/categorienwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Windows\CategorienWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

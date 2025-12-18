@@ -1,0 +1,47 @@
+﻿@model List<MijnBibliotheekModels.Models.Categorie>
+@{
+    ViewData["Title"] = "Categorieën";
+    bool canEdit = User.IsInRole("Admin") || User.IsInRole("Medewerker");
+}
+
+<h2>Categorieën</h2>
+
+@if (canEdit)
+{
+    <form asp-action="Add" method="post" class="row g-2 mb-3">
+        <div class="col-md-6">
+            <input class="form-control" name="naam" placeholder="Nieuwe categorie..." />
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-primary w-100" type="submit">Toevoegen</button>
+        </div>
+    </form>
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Naam</th>
+            @if (canEdit)
+            {
+                <th>Acties</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var c in Model)
+        {
+            <tr>
+                <td>@c.Naam</td>
+                @if (canEdit)
+                {
+                    <td>
+                        <form asp-action="Delete" asp-route-id="@c.Id" method="post">
+                            <button class="btn btn-sm btn-outline-danger" type="submit">Verwijder</button>
+                        </form>
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MijnBibliotheekMAUI.Pages.LoginPage"
+             Title="Login">
+
+    <VerticalStackLayout Padding="20" Spacing="12">
+
+        <Label Text="Login"
+               FontSize="24"
+               FontAttributes="Bold" />
+
+        <Entry Placeholder="Email"
+               Text="{Binding Email}" />
+
+        <Entry Placeholder="Wachtwoord"
+               IsPassword="True"
+               Text="{Binding Password}" />
+
+        <Button Text="Login"
+                Command="{Binding LoginCommand}" />
+
+        <BoxView HeightRequest="1" BackgroundColor="Gray" Margin="0,10"/>
+
+        <Label Text="Nog geen account?"
+               FontAttributes="Bold" />
+
+        <Entry Placeholder="Volledige naam"
+               Text="{Binding RegisterFullName}" />
+
+        <Entry Placeholder="Email"
+               Text="{Binding RegisterEmail}" />
+
+        <Entry Placeholder="Wachtwoord"
+               IsPassword="True"
+               Text="{Binding RegisterPassword}" />
+
+        <Button Text="Registreren"
+                Command="{Binding RegisterCommand}" />
+
+        <Label Text="{Binding Error}"
+               TextColor="Red"
+               IsVisible="{Binding HasError}" />
+
+    </VerticalStackLayout>
+</ContentPage>

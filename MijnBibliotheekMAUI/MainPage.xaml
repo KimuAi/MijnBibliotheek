@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MijnBibliotheekMAUI.MainPage"
+    Title="Boeken">
+
+    <VerticalStackLayout Padding="16" Spacing="12">
+        <Label Text="Boeken" FontSize="24" FontAttributes="Bold"/>
+
+        <Button Text="Vernieuwen" Clicked="Refresh_Clicked"/>
+
+        <CollectionView x:Name="BoekenList">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="10" Margin="0,0,0,8">
+                        <VerticalStackLayout>
+                            <Label Text="{Binding Titel}" FontAttributes="Bold" FontSize="18"/>
+                            <Label Text="{Binding Auteur}" FontSize="14"/>
+                            <Label Text="{Binding IsBeschikbaar, StringFormat='Beschikbaar: {0}'}" FontSize="12"/>
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button Text="Ga naar categorieën" Clicked="OpenCategorieen_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MijnBibliotheekMAUI.Pages.UitleningenPage"
+             Title="Uitleningen">
+
+    <VerticalStackLayout Padding="16" Spacing="12">
+        <Button Text="Vernieuwen" Command="{Binding RefreshCommand}" />
+        <Label Text="{Binding Error}" TextColor="Red" />
+
+        <CollectionView ItemsSource="{Binding Uitleningen}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="12" Margin="0,6">
+                        <VerticalStackLayout>
+                            <Label Text="{Binding BoekTitel}" FontSize="18" />
+                            <Label Text="{Binding UitgeleendOp}" />
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+
+</ContentPage>

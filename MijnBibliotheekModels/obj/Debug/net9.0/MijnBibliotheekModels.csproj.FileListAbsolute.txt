@@ -7,6 +7,7 @@ C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekModels\obj\Debug\net9
 C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekModels\obj\Debug\net9.0\MijnBibliotheekModels.AssemblyInfoInputs.cache
 C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekModels\obj\Debug\net9.0\MijnBibliotheekModels.AssemblyInfo.cs
 C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekModels\obj\Debug\net9.0\MijnBibliotheekModels.csproj.CoreCompileInputs.cache
+C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekModels\obj\Debug\net9.0\MijnBibliotheekModels.sourcelink.json
 C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekModels\obj\Debug\net9.0\MijnBibliotheekModels.dll
 C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekModels\obj\Debug\net9.0\refint\MijnBibliotheekModels.dll
 C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekModels\obj\Debug\net9.0\MijnBibliotheekModels.pdb
