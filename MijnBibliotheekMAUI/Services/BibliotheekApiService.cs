@@ -3,7 +3,7 @@ using System.Net.Http.Json;
 using MijnBibliotheekMAUI.Dtos;
 
 namespace MijnBibliotheekMAUI.Services;
-
+/// Service voor bibliotheek-gerelateerde API-aanroepen
 public class BibliotheekApiService
 {
     private readonly HttpClient _http;

@@ -6,7 +6,7 @@ using MijnBibliotheekMAUI.ViewModels;
 using System.Net;
 
 namespace MijnBibliotheekMAUI;
-
+// maui program startup
 public static class MauiProgram
 {
     public static MauiApp CreateMauiApp()

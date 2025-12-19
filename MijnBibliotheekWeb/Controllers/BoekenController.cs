@@ -7,7 +7,7 @@ using MijnBibliotheekModels.Models;
 using MijnBibliotheekWeb.ViewModels;
 
 namespace MijnBibliotheekWeb.Controllers;
-
+// Controller voor het beheren van boeken in de bibliotheek
 [Authorize]
 public class BoekenController : Controller
 {
@@ -37,7 +37,7 @@ public class BoekenController : Controller
 
         return View(await query.OrderBy(b => b.Titel).ToListAsync());
     }
-
+    // GET: Boeken/Create
     [Authorize(Roles = "Admin,Medewerker")]
     [HttpGet]
     public async Task<IActionResult> Create()
@@ -45,7 +45,7 @@ public class BoekenController : Controller
         ViewBag.Cats = new SelectList(await _db.Categorieen.OrderBy(c => c.Naam).ToListAsync(), "Id", "Naam");
         return View(new BoekEditVm());
     }
-
+    // POST: Boeken/Create
     [Authorize(Roles = "Admin,Medewerker")]
     [HttpPost]
     public async Task<IActionResult> Create(BoekEditVm vm)
@@ -68,7 +68,7 @@ public class BoekenController : Controller
         await _db.SaveChangesAsync();
         return RedirectToAction(nameof(Index));
     }
-
+    // GET: Boeken/Edit/5
     [Authorize(Roles = "Admin,Medewerker")]
     [HttpGet]
     public async Task<IActionResult> Edit(int id)
@@ -88,7 +88,7 @@ public class BoekenController : Controller
             IsBeschikbaar = boek.IsBeschikbaar
         });
     }
-
+    //  POST: Boeken/Edit/5
     [Authorize(Roles = "Admin,Medewerker")]
     [HttpPost]
     public async Task<IActionResult> Edit(BoekEditVm vm)
@@ -111,7 +111,7 @@ public class BoekenController : Controller
         await _db.SaveChangesAsync();
         return RedirectToAction(nameof(Index));
     }
-
+    // POST: Boeken/Delete/5
     [Authorize(Roles = "Admin,Medewerker")]
     [HttpPost]
     public async Task<IActionResult> Delete(int id)

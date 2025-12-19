@@ -1,5 +1,5 @@
 ﻿namespace MijnBibliotheekMAUI.Dtos;
-
+/// DTO voor registratieverzoek
 public class RegisterRequestDto
 {
     public string FullName { get; set; } = "";

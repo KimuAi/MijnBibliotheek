@@ -8,7 +8,7 @@ using MijnBibliotheekModels.Models;
 using MijnBibliotheekWeb.ViewModels;
 
 namespace MijnBibliotheekWeb.Controllers;
-
+// Controller voor het beheren van uitleningen in de bibliotheekapplicatie.
 [Authorize]
 public class UitleningenController : Controller
 {
@@ -26,7 +26,7 @@ public class UitleningenController : Controller
 
         return View(list);
     }
-
+    // Toont het formulier voor het aanmaken van een nieuwe uitlening.
     [Authorize(Roles = "Admin,Medewerker")]
     [HttpGet]
     public async Task<IActionResult> Create()
@@ -41,7 +41,7 @@ public class UitleningenController : Controller
 
         return View(new UitleningCreateVm());
     }
-
+    // Verwerkt het indienen van het formulier voor het aanmaken van een nieuwe uitlening.
     [Authorize(Roles = "Admin,Medewerker")]
     [HttpPost]
     public async Task<IActionResult> Create(UitleningCreateVm vm)
@@ -80,7 +80,7 @@ public class UitleningenController : Controller
         await _db.SaveChangesAsync();
         return RedirectToAction(nameof(Index));
     }
-
+    // Markeert een uitlening als teruggebracht.
     [Authorize(Roles = "Admin,Medewerker")]
     [HttpPost]
     public async Task<IActionResult> Terug(int id)

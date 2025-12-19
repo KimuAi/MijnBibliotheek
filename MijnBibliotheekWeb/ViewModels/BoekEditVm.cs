@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
 namespace MijnBibliotheekWeb.ViewModels;
-
+/// ViewModel voor het bewerken van een boek
 public class BoekEditVm
 {
     public int Id { get; set; }

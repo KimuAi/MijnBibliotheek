@@ -5,7 +5,7 @@ using MijnBibliotheekMAUI.Models;
 using MijnBibliotheekMAUI.Services;
 
 namespace MijnBibliotheekMAUI.ViewModels;
-
+//boekenlijst + leenfunctie + admin delete functie
 public class BoekenVm : BaseVm
 {
     private readonly BibliotheekApiService _api;

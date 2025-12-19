@@ -1,5 +1,5 @@
 ﻿namespace MijnBibliotheekMAUI.Dtos;
-
+/// Data Transfer Object voor Uitlening
 public class UitleningDto
 {
     public int Id { get; set; }

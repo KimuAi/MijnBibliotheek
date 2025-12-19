@@ -3,7 +3,7 @@ using MijnBibliotheekMAUI.Dtos;
 using MijnBibliotheekMAUI.Models;
 
 namespace MijnBibliotheekMAUI.Services;
-
+/// Service voor boeken-gerelateerde API-aanroepen
 public class BoekenApiService
 {
     private readonly HttpClient _http;

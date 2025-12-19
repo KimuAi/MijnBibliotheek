@@ -5,6 +5,7 @@ using MijnBibliotheekModels.Identity;
 
 namespace MijnBibliotheekWeb.Controllers.Api
 {
+    // API-controller voor alle authenticatie-acties (login, register, logout, me)
     [ApiController]
     [Route("api/auth")]
     public class AuthController : ControllerBase
@@ -34,7 +35,7 @@ namespace MijnBibliotheekWeb.Controllers.Api
 
             return Ok();
         }
-
+        // Registratie van nieuwe gebruikers
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterDto dto)
         {
@@ -53,14 +54,14 @@ namespace MijnBibliotheekWeb.Controllers.Api
             await _userMgr.AddToRoleAsync(user, "Lid");
             return Ok();
         }
-
+        // Logout van de huidige gebruiker
         [HttpPost("logout")]
         public async Task<IActionResult> Logout()
         {
             await _signInMgr.SignOutAsync();
             return Ok();
         }
-
+        // Geeft info terug over de ingelogde gebruiker
         [Authorize]
         [HttpGet("me")]
         public async Task<IActionResult> Me()

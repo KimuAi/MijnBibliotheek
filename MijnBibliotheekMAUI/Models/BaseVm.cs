@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 
 namespace MijnBibliotheekMAUI.Models;
-
+/// Basis ViewModel met INotifyPropertyChanged-implementatie
 public class BaseVm : INotifyPropertyChanged
 {
     bool _isBusy;

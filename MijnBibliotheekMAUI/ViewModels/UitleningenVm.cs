@@ -6,7 +6,7 @@ using System.Collections.ObjectModel;
 using System.Windows.Input;
 
 namespace MijnBibliotheekMAUI.ViewModels;
-
+//uitleningenlijst + inleverfunctie
 public class UitleningenVm : BaseVm
 {
     private readonly BibliotheekApiService _api;

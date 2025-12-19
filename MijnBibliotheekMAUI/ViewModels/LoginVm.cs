@@ -3,7 +3,7 @@ using MijnBibliotheekMAUI.Services;
 using System.Windows.Input;
 
 namespace MijnBibliotheekMAUI.ViewModels;
-
+//login + registratie
 public class LoginVm : BaseVm
 {
     private readonly AuthApiService _auth;

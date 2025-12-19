@@ -1,7 +1,7 @@
 ﻿using System.Net;
 
 namespace MijnBibliotheekMAUI.Models;
-
+// voor het bijhouden van de sessie-informatie van de API-gebruiker
 public class ApiSession
 {
     public CookieContainer Cookies { get; } = new();

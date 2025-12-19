@@ -1,5 +1,5 @@
 ﻿namespace MijnBibliotheekWeb.Dtos
-{
+{// DTOs voor boek-gerelateerde operaties in de bibliotheekapplicatie.
     public class BoekDto
     {
         public int Id { get; set; }

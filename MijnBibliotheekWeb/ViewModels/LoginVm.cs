@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
 namespace MijnBibliotheekWeb.ViewModels;
-
 public class LoginVm
 {
     [Required, EmailAddress]

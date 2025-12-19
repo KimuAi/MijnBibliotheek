@@ -3,7 +3,7 @@ using MijnBibliotheekMAUI.Dtos;
 using MijnBibliotheekMAUI.Models;
 
 namespace MijnBibliotheekMAUI.Services;
-
+/// Service voor authenticatie-gerelateerde API-aanroepen
 public class AuthApiService
 {
     private readonly HttpClient _http;

@@ -6,7 +6,7 @@ using System.Collections.ObjectModel;
 using System.Windows.Input;
 
 namespace MijnBibliotheekMAUI.ViewModels;
-
+//categorieënlijst
 public class CategorieenVm : BaseVm
 {
     private readonly BibliotheekApiService _api;

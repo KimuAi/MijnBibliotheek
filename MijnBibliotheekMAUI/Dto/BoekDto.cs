@@ -1,5 +1,5 @@
 ﻿namespace MijnBibliotheekMAUI.Dtos;
-
+// Data Transfer Object (DTO) voor Boek (Book)
 public class BoekDto
 {
     public int Id { get; set; }

@@ -1,5 +1,5 @@
 ﻿namespace MijnBibliotheekWeb.Dtos
-{
+{ // DTOs voor authenticatie-gerelateerde operaties in de bibliotheekapplicatie.
     public class RegisterDto
     {
         public string Email { get; set; } = "";
