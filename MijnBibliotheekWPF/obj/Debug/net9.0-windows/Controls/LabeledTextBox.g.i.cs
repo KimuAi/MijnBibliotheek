@@ -52,7 +52,7 @@ namespace MijnBibliotheekWPF.Controls {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MijnBibliotheekWPF;component/controls/labeledtextbox.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MijnBibliotheekWPF;V1.0.0.0;component/controls/labeledtextbox.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Controls\LabeledTextBox.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
