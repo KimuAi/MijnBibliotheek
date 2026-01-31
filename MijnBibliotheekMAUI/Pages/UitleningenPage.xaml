@@ -3,23 +3,61 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MijnBibliotheekMAUI.Pages.UitleningenPage"
              Title="Uitleningen">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Button">
+                <Setter Property="CornerRadius" Value="8" />
+            </Style>
+             <!-- Simple inverse bool converter defined inline if possible or assume standard one exists, 
+                  but better to use Toolkit or manual trigger. 
+                  Let's use a DataTrigger for simplicity instead of converter to avoid creating new file -->
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
-    <VerticalStackLayout Padding="16" Spacing="12">
-        <Button Text="Vernieuwen" Command="{Binding RefreshCommand}" />
-        <Label Text="{Binding Error}" TextColor="Red" />
+    <Grid RowDefinitions="Auto, Auto, *">
+        <!-- Header -->
+        <VerticalStackLayout Grid.Row="0" Padding="10">
+            <Button Text="Vernieuwen" Command="{Binding RefreshCommand}" />
+            <Label Text="{Binding Error}" TextColor="Red" />
+        </VerticalStackLayout>
 
-        <CollectionView ItemsSource="{Binding Uitleningen}">
+        <!-- List -->
+        <CollectionView Grid.Row="2" ItemsSource="{Binding Uitleningen}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame Padding="12" Margin="0,6">
-                        <VerticalStackLayout>
-                            <Label Text="{Binding BoekTitel}" FontSize="18" />
-                            <Label Text="{Binding UitgeleendOp}" />
-                        </VerticalStackLayout>
+                    <Frame Padding="12" Margin="10,6">
+                        <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto">
+                            <Label Grid.Row="0" Grid.Column="0" Text="{Binding BoekTitel}" FontSize="18" FontAttributes="Bold"/>
+                            <Label Grid.Row="1" Grid.Column="0" Text="{Binding StartDatum, StringFormat='Geleend op: {0:dd-MM-yyyy}'}" FontSize="12" TextColor="Gray"/>
+                            
+                            <Button Grid.RowSpan="2" Grid.Column="1" 
+                                    Text="Terug" 
+                                    BackgroundColor="{StaticResource Primary}" 
+                                    TextColor="White"
+                                    HeightRequest="40"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.ReturnCommand}"
+                                    CommandParameter="{Binding .}">
+                                <Button.Triggers>
+                                    <DataTrigger TargetType="Button" Binding="{Binding IsTeruggebracht}" Value="True">
+                                        <Setter Property="IsEnabled" Value="False" />
+                                        <Setter Property="BackgroundColor" Value="Gray" />
+                                        <Setter Property="Text" Value="Klaar" />
+                                    </DataTrigger>
+                                </Button.Triggers>
+                            </Button>
+                             
+                             <Label Grid.RowSpan="2" Grid.Column="1"
+                                    Text="Gedaan" 
+                                    TextColor="Green"
+                                    VerticalOptions="Center"
+                                    IsVisible="{Binding IsTeruggebracht}" />
+
+                        </Grid>
                     </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-    </VerticalStackLayout>
+    </Grid>
 
 </ContentPage>

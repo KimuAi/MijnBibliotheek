@@ -1,43 +1,47 @@
-﻿@model MijnBibliotheekWeb.ViewModels.BoekEditVm
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.AspNetCore.Mvc.Rendering
+@inject IViewLocalizer Localizer
+@model MijnBibliotheekWeb.ViewModels.BoekEditVm
 @{
-    ViewData["Title"] = "Boek bewerken";
+    ViewData["Title"] = Localizer["EditBook"];
+    var categories = ViewData["Cats"] as IEnumerable<SelectListItem>;
 }
 
-<h2>Boek bewerken</h2>
+<h2>@Localizer["EditBook"]</h2>
 
 <form method="post">
     <input type="hidden" asp-for="Id" />
 
     <div class="mb-3">
-        <label class="form-label">Titel</label>
+        <label class="form-label">@Localizer["Title"]</label>
         <input class="form-control" asp-for="Titel" />
         <span class="text-danger" asp-validation-for="Titel"></span>
     </div>
 
     <div class="mb-3">
-        <label class="form-label">Auteur</label>
+        <label class="form-label">@Localizer["Author"]</label>
         <input class="form-control" asp-for="Auteur" />
         <span class="text-danger" asp-validation-for="Auteur"></span>
     </div>
 
     <div class="mb-3">
-        <label class="form-label">ISBN</label>
+        <label class="form-label">@Localizer["ISBN"]</label>
         <input class="form-control" asp-for="ISBN" />
         <span class="text-danger" asp-validation-for="ISBN"></span>
     </div>
 
     <div class="mb-3">
-        <label class="form-label">Categorie</label>
-        <select class="form-select" asp-for="CategorieId" asp-items="ViewBag.Cats"></select>
+        <label class="form-label">@Localizer["Category"]</label>
+        <select class="form-select" asp-for="CategorieId" asp-items="categories"></select>
     </div>
 
     <div class="form-check mb-3">
         <input class="form-check-input" asp-for="IsBeschikbaar" />
-        <label class="form-check-label" asp-for="IsBeschikbaar">Beschikbaar</label>
+        <label class="form-check-label" asp-for="IsBeschikbaar">@Localizer["Available"]</label>
     </div>
 
-    <button class="btn btn-primary" type="submit">Opslaan</button>
-    <a class="btn btn-secondary" asp-action="Index">Terug</a>
+    <button class="btn btn-primary" type="submit">@Localizer["Save"]</button>
+    <a class="btn btn-secondary" asp-action="Index">@Localizer["Back"]</a>
 </form>
 
 @section Scripts {

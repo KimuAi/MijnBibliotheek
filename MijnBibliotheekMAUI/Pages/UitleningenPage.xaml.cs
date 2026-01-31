@@ -15,6 +15,6 @@ public partial class UitleningenPage : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        if (_vm.Uitleningen.Count == 0) await _vm.Load();
+        await _vm.Load();
     }
 }

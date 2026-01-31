@@ -24,11 +24,11 @@ public class ApiSession
     public static string GetBaseUrl()
     {
 #if ANDROID
-        return "https://10.0.2.2:7234/";
+        return "http://10.0.2.2:5203/";
 #elif WINDOWS
-        return "https://localhost:7234/";
+        return "http://localhost:5203/";
 #else
-        return "https://localhost:7234/";
+        return "http://localhost:5203/";
 #endif
     }
 }

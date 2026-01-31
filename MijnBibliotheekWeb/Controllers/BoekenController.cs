@@ -15,7 +15,7 @@ public class BoekenController : Controller
 
     public BoekenController(BibliotheekContext db) => _db = db;
 
-    public async Task<IActionResult> Index(string? q = null, int? catId = null)
+    public async Task<IActionResult> Index(string? q = null, int? catId = null, bool partial = false)
     {
         var query = _db.Boeken.Include(b => b.Categorie).AsQueryable();
 
@@ -35,7 +35,12 @@ public class BoekenController : Controller
         ViewBag.Q = q;
         ViewBag.CatId = catId;
 
-        return View(await query.OrderBy(b => b.Titel).ToListAsync());
+        var model = await query.OrderBy(b => b.Titel).ToListAsync();
+
+        if (partial)
+            return PartialView("_BoekenTabel", model);
+
+        return View(model);
     }
     // GET: Boeken/Create
     [Authorize(Roles = "Admin,Medewerker")]

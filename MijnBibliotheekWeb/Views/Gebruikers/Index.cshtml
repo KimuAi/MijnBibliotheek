@@ -1,0 +1,48 @@
+@model List<MijnBibliotheekModels.Identity.AppUser>
+@{
+    ViewData["Title"] = "Gebruikersbeheer";
+}
+
+<h2>Gebruikersbeheer</h2>
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Naam</th>
+            <th>Status</th>
+            <th>Acties</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Email</td>
+                <td>@user.VolledigeNaam</td>
+                <td>
+                    @if (user.IsGeblokkeerd)
+                    {
+                        <span class="badge bg-danger">Geblokkeerd</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-success">Actief</span>
+                    }
+                </td>
+                <td>
+                    <form asp-action="ToggleBlock" asp-route-id="@user.Id" method="post" class="d-inline">
+                        <button class="btn btn-sm @(user.IsGeblokkeerd ? "btn-warning" : "btn-outline-danger")" type="submit">
+                            @(user.IsGeblokkeerd ? "Deblokkeren" : "Blokkeren")
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

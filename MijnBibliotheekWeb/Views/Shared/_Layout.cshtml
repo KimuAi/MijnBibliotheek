@@ -1,4 +1,6 @@
 ﻿<!DOCTYPE html>
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -12,17 +14,34 @@
         <nav class="navbar navbar-expand-sm navbar-light bg-light border-bottom mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-controller="Home" asp-action="Index">Mijn Bibliotheek</a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
                 <div class="collapse navbar-collapse">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="Boeken" asp-action="Index">Boeken</a>
+                            <a class="nav-link" asp-controller="Boeken" asp-action="Index">@Localizer["Books"]</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="Categorieen" asp-action="Index">Categorieën</a>
+                            <a class="nav-link" asp-controller="Categorieen" asp-action="Index">@Localizer["Categories"]</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="Uitleningen" asp-action="Index">Uitleningen</a>
+                            <a class="nav-link" asp-controller="Uitleningen" asp-action="Index">@Localizer["Loans"]</a>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                @Localizer["Language"]
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="?culture=nl">Nederlands</a></li>
+                                <li><a class="dropdown-item" href="?culture=fr">Français</a></li>
+                                <li><a class="dropdown-item" href="?culture=en">English</a></li>
+                            </ul>
                         </li>
                     </ul>
 
@@ -38,8 +57,9 @@
         </main>
     </div>
 
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
+    
     @* voorkomt script error *@
     @RenderSection("Scripts", required: false)
 </body>

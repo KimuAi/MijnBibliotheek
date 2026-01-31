@@ -22,51 +22,33 @@ public class BibliotheekApiService
     //probeert meerdere mogelijke routes
     public async Task<List<UitleningDto>> GetMijnUitleningenAsync()
     {
-        var bases = new[] { "api/uitleningenapi", "api/uitleningen" };
-        var tails = new[] { "mijn", "mine", "me", "mijnuitleningen", "mijn-uitleningen", "user" };
-
-        foreach (var b in bases)
-        {
-            foreach (var t in tails)
-            {
-                var url = $"{b}/{t}";
-                var (ok, data, code) = await TryGetAsync<List<UitleningDto>>(url);
-                if (ok) return data ?? new();
-
-                if (code != HttpStatusCode.NotFound)
-                    throw new HttpRequestException($"GET {url} failed: {(int)code} ({code})");
-            }
-        }
-
-        throw new HttpRequestException(
-            "Uitleningen endpoint niet gevonden. Zoek in browser welke route werkt en pas bases/tails aan.");
+        // Directe call naar de endpoint (Web API gebruikt User claim)
+        return await GetAsync<List<UitleningDto>>("api/uitleningenapi") ?? new();
     }
 
     public async Task<bool> LeenBoekAsync(int boekId)
     {
-        var candidates = new[]
-        {
-            $"api/uitleningenapi/leen/{boekId}",
-            $"api/uitleningen/leen/{boekId}",
-            $"api/uitleningenapi/borrow/{boekId}",
-            $"api/uitleningen/borrow/{boekId}",
-        };
-
-        foreach (var url in candidates)
-        {
-            var res = await _http.PostAsync(url, null);
-            if (res.IsSuccessStatusCode) return true;
-
-            if (res.StatusCode != HttpStatusCode.NotFound)
-                return false;
-        }
-
-        throw new HttpRequestException("Leen endpoint niet gevonden. Pas candidates aan naar jouw echte route.");
+        // Correcte route: api/uitleningenapi/{id}/leen
+        var url = $"api/uitleningenapi/{boekId}/leen";
+        var res = await _http.PostAsync(url, null);
+        return res.IsSuccessStatusCode;
     }
 
     // Admin acties
     public async Task<bool> AdminBoekDeleteAsync(int id)
         => (await _http.DeleteAsync($"api/boekenapi/{id}")).IsSuccessStatusCode;
+
+    public async Task<bool> ReturnBoekAsync(int uitleningId)
+    {
+        var res = await _http.PostAsync($"api/uitleningenapi/{uitleningId}/terug", null);
+        return res.IsSuccessStatusCode;
+    }
+
+    public async Task<bool> CreateCategorieAsync(string naam)
+    {
+         var res = await _http.PostAsJsonAsync("api/categorieenapi", new CategorieDto { Naam = naam });
+         return res.IsSuccessStatusCode;
+    }
 
     // helper methods
 

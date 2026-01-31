@@ -1,19 +1,40 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using MijnBibliotheekModels.Data;
+using MijnBibliotheekWeb.Dtos;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MijnBibliotheekWeb.Controllers.Api;
-// API-controller voor boek-gerelateerde endpoints
+
 [ApiController]
 [Route("api/boekenapi")]
 public class BoekenApiController : ControllerBase
 {
-    // Publiek endpoint om boeken op te halen
-    [HttpGet]
-    public IActionResult Get()
+    private readonly BibliotheekContext _db;
+
+    public BoekenApiController(BibliotheekContext db)
     {
-        return Ok(Array.Empty<object>());
+        _db = db;
     }
-    // Alleen admin-gebruikers kunnen boeken aanmaken, bijwerken en verwijderen
+
+    [HttpGet]
+    public async Task<ActionResult<List<BoekDto>>> Get()
+    {
+        return await _db.Boeken.Include(b => b.Categorie)
+            .Where(b => !b.IsDeleted)
+            .Select(b => new BoekDto
+            {
+                Id = b.Id,
+                Titel = b.Titel,
+                Auteur = b.Auteur,
+                ISBN = b.ISBN,
+                CategorieId = b.CategorieId,
+                CategorieNaam = b.Categorie != null ? b.Categorie.Naam : "",
+                IsBeschikbaar = b.IsBeschikbaar
+            })
+            .ToListAsync();
+    }
+
     [Authorize(Roles = "Admin")]
     [HttpPost]
     public IActionResult Create([FromBody] object boek) => Ok();

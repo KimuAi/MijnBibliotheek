@@ -54,6 +54,7 @@ public static class MauiProgram
         // Services
         builder.Services.AddSingleton<AuthApiService>();
         builder.Services.AddSingleton<BibliotheekApiService>();
+        builder.Services.AddSingleton<LocalDbService>();
 
         // ViewModels
         builder.Services.AddSingleton<LoginVm>();
