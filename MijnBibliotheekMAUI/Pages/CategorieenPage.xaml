@@ -14,7 +14,7 @@
             <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" Color="#1976D2"/>
         </VerticalStackLayout>
 
-        <!-- Bewerkpaneel: verschijnt als IsEditing = True -->
+        <!-- Bewerkpaneel -->
         <Frame Grid.Row="1" Padding="12" Margin="12,4" BackgroundColor="#FFF8E1"
                IsVisible="{Binding IsEditing}">
             <VerticalStackLayout Spacing="8">

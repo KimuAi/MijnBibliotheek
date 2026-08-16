@@ -1,4 +1,4 @@
-﻿namespace MijnBibliotheekMAUI;
+namespace MijnBibliotheekMAUI;
 
 public partial class App : Application
 {
@@ -7,9 +7,13 @@ public partial class App : Application
     public App(IServiceProvider services)
     {
         InitializeComponent();
-
         Services = services;
+    }
 
-        MainPage = services.GetRequiredService<AppShell>();
+    protected override Window CreateWindow(IActivationState activationState)
+    {
+        var window = base.CreateWindow(activationState);
+        window.Page = Services.GetRequiredService<AppShell>();
+        return window;
     }
 }
