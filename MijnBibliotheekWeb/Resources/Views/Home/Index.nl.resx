@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="WelcomeTitle" xml:space="preserve">
+    <value>Welkom</value>
+  </data>
+  <data name="WelcomeText" xml:space="preserve">
+    <value>Welkom bij MijnBibliotheek. Beheer uw boeken, uitleningen en categorieën op een veilige manier.</value>
+  </data>
+</root>

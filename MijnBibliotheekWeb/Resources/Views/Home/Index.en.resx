@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="WelcomeTitle" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="WelcomeText" xml:space="preserve">
+    <value>Welcome to MyLibrary. Manage your books, loans, and categories securely.</value>
+  </data>
+</root>

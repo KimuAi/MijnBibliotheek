@@ -14,6 +14,7 @@ public class BoekenVm : BaseVm
     public ObservableCollection<BoekDto> Boeken { get; } = new();
 
     public bool IsAdmin => _session.IsAdmin;
+    public bool IsLoggedIn => _session.IsLoggedIn;
 
     public ICommand RefreshCommand { get; }
     public ICommand LeenCommand { get; }
@@ -55,6 +56,12 @@ public class BoekenVm : BaseVm
     private async Task Leen(BoekDto? boek)
     {
         if (boek == null) return;
+        
+        if (!_session.IsLoggedIn)
+        {
+            Error = "Je moet ingelogd zijn om een boek te kunnen lenen.";
+            return;
+        }
 
         Error = "";
         try

@@ -94,4 +94,14 @@ public class LoginVm : BaseVm
         Password = RegisterPassword;
         await Login();
     }
+
+    public async Task Logout()
+    {
+        try 
+        { 
+            await _auth.LogoutAsync(); 
+            // Optional: Cleanup local state if needed
+        } 
+        catch { /* ignore logout errors on init */ }
+    }
 }

@@ -21,6 +21,17 @@
         },
         "runtime": {
           "MijnBibliotheekWeb.dll": {}
+        },
+        "resources": {
+          "en/MijnBibliotheekWeb.resources.dll": {
+            "locale": "en"
+          },
+          "fr/MijnBibliotheekWeb.resources.dll": {
+            "locale": "fr"
+          },
+          "nl/MijnBibliotheekWeb.resources.dll": {
+            "locale": "nl"
+          }
         }
       },
       "Azure.Core/1.38.0": {

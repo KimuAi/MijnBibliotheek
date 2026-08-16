@@ -4,6 +4,7 @@ using MijnBibliotheekModels.Data;
 using MijnBibliotheekModels.Identity;
 using MijnBibliotheekWeb.Middleware;
 using MijnBibliotheekWeb.Services;
+<<<<<<< HEAD
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,28 @@ builder.Services.AddScoped<LanguageService>();
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 
 // DbContext SQLite
+=======
+using Microsoft.AspNetCore.Identity.UI.Services;
+using Microsoft.AspNetCore.Mvc.Razor;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
+
+var builder = WebApplication.CreateBuilder(args);
+
+//MVC + Razor PagesIdentity UI
+builder.Services.AddControllersWithViews()
+    .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix); // Voor meertalige views
+
+builder.Services.AddRazorPages();
+
+// Meertaligheid setup
+builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
+
+// Email Service (Dummy)
+builder.Services.AddTransient<IEmailSender, EmailService>();
+
+//DbContext SQLite
+>>>>>>> 841af99e05376b83ff6c2a2cf9b76484d6b0b01b
 var cs = builder.Configuration.GetConnectionString("DefaultConnection")
          ?? "Data Source=bibliotheek.web.db";
 
@@ -93,7 +116,9 @@ using (var scope = app.Services.CreateScope())
     var db = scope.ServiceProvider.GetRequiredService<BibliotheekContext>();
     var roleMgr = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
     var userMgr = scope.ServiceProvider.GetRequiredService<UserManager<AppUser>>();
+    Console.WriteLine("--> Calling Seeder...");
     await BibliotheekSeeder.SeedAsync(db, roleMgr, userMgr);
+    Console.WriteLine("--> Seeding Finished.");
 }
 
 // Middleware
@@ -105,6 +130,18 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+
+// Eigen Taal Middleware (voor cookie management)
+app.UseMiddleware<TaalMiddleware>();
+
+// Built-in Localization Middleware (verplicht voor MVC)
+var supportedCultures = new[] { "nl", "en", "fr" };
+var localizationOptions = new RequestLocalizationOptions()
+    .SetDefaultCulture("nl")
+    .AddSupportedCultures(supportedCultures)
+    .AddSupportedUICultures(supportedCultures);
+
+app.UseRequestLocalization(localizationOptions);
 
 app.UseRouting();
 

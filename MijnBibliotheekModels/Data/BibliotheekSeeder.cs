@@ -12,8 +12,10 @@ namespace MijnBibliotheekModels.Data
             RoleManager<IdentityRole> roleMgr,
             UserManager<AppUser> userMgr)
         {
+            Console.WriteLine("--> Start Seeding...");
             // Database + migraties
             await db.Database.MigrateAsync();
+            Console.WriteLine("--> Migrations applied.");
 
             // Rollen
             string[] roles = { "Admin", "Medewerker", "Lid" };
@@ -67,32 +69,27 @@ namespace MijnBibliotheekModels.Data
             {
                 var fantasy = await db.Categorieen.FirstAsync(c => c.Naam == "Fantasy");
                 var thriller = await db.Categorieen.FirstAsync(c => c.Naam == "Thriller");
+                var wetenschap = await db.Categorieen.FirstAsync(c => c.Naam == "Wetenschap");
 
                 db.Boeken.AddRange(
-                    new Boek
-                    {
-                        Titel = "Harry Potter",
-                        Auteur = "J.K. Rowling",
-                        ISBN = "HP001",
-                        CategorieId = fantasy.Id,
-                        IsBeschikbaar = true
-                    },
-                    new Boek
-                    {
-                        Titel = "The Hobbit",
-                        Auteur = "J.R.R. Tolkien",
-                        ISBN = "HB001",
-                        CategorieId = fantasy.Id,
-                        IsBeschikbaar = true
-                    },
-                    new Boek
-                    {
-                        Titel = "Da Vinci Code",
-                        Auteur = "Dan Brown",
-                        ISBN = "DV001",
-                        CategorieId = thriller.Id,
-                        IsBeschikbaar = true
-                    }
+                    // Fantasy
+                    new Boek { Titel = "Harry Potter en de Steen der Wijzen", Auteur = "J.K. Rowling", ISBN = "HP001", CategorieId = fantasy.Id, IsBeschikbaar = true },
+                    new Boek { Titel = "Harry Potter en de Geheime Kamer", Auteur = "J.K. Rowling", ISBN = "HP002", CategorieId = fantasy.Id, IsBeschikbaar = true },
+                    new Boek { Titel = "The Hobbit", Auteur = "J.R.R. Tolkien", ISBN = "HB001", CategorieId = fantasy.Id, IsBeschikbaar = true },
+                    new Boek { Titel = "The Lord of the Rings: The Fellowship of the Ring", Auteur = "J.R.R. Tolkien", ISBN = "LOTR01", CategorieId = fantasy.Id, IsBeschikbaar = true },
+                    new Boek { Titel = "A Game of Thrones", Auteur = "George R.R. Martin", ISBN = "GOT001", CategorieId = fantasy.Id, IsBeschikbaar = true },
+                    
+                    // Thriller
+                    new Boek { Titel = "Da Vinci Code", Auteur = "Dan Brown", ISBN = "DV001", CategorieId = thriller.Id, IsBeschikbaar = true },
+                    new Boek { Titel = "Het Bernini Mysterie", Auteur = "Dan Brown", ISBN = "DV002", CategorieId = thriller.Id, IsBeschikbaar = true },
+                    new Boek { Titel = "De Eetclub", Auteur = "Saskia Noort", ISBN = "SN001", CategorieId = thriller.Id, IsBeschikbaar = true },
+                    new Boek { Titel = "Millennium: Mannen die vrouwen haten", Auteur = "Stieg Larsson", ISBN = "MIL001", CategorieId = thriller.Id, IsBeschikbaar = true },
+
+                    // Wetenschap
+                    new Boek { Titel = "A Brief History of Time", Auteur = "Stephen Hawking", ISBN = "BH001", CategorieId = wetenschap.Id, IsBeschikbaar = true },
+                    new Boek { Titel = "Sapiens", Auteur = "Yuval Noah Harari", ISBN = "SAP001", CategorieId = wetenschap.Id, IsBeschikbaar = true },
+                    new Boek { Titel = "Cosmos", Auteur = "Carl Sagan", ISBN = "COS001", CategorieId = wetenschap.Id, IsBeschikbaar = true },
+                    new Boek { Titel = "The Selfish Gene", Auteur = "Richard Dawkins", ISBN = "SG001", CategorieId = wetenschap.Id, IsBeschikbaar = true }
                 );
 
                 await db.SaveChangesAsync();

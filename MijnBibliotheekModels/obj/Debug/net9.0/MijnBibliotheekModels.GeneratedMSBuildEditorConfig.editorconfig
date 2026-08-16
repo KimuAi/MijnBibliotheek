@@ -18,7 +18,11 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.TargetFrameworkIdentifier = .NETCoreApp
 build_property.TargetFrameworkVersion = v9.0
 build_property.RootNamespace = MijnBibliotheekModels
+<<<<<<< HEAD
 build_property.ProjectDir = c:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekModels\
+=======
+build_property.ProjectDir = C:\Users\Kimbe\source\repos\MijnBibliotheek-2\MijnBibliotheekModels\
+>>>>>>> 841af99e05376b83ff6c2a2cf9b76484d6b0b01b
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.EffectiveAnalysisLevelStyle = 9.0

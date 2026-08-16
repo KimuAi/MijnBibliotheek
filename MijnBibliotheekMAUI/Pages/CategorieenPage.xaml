@@ -4,19 +4,28 @@
              x:Class="MijnBibliotheekMAUI.Pages.CategorieenPage"
              Title="Categorieën">
 
-    <VerticalStackLayout Padding="16" Spacing="12">
-        <Button Text="Vernieuwen" Command="{Binding RefreshCommand}" />
-        <Label Text="{Binding Error}" TextColor="Red" />
+    <Grid RowDefinitions="Auto, Auto, *">
+        <VerticalStackLayout Grid.Row="0" Padding="10" Spacing="10">
+            <Button Text="Vernieuwen" Command="{Binding RefreshCommand}" />
+            <Label Text="{Binding Error}" TextColor="Red" />
+            
+            <!-- Admin Add Section -->
+            <VerticalStackLayout IsVisible="{Binding IsAdmin}" Spacing="5">
+                <Label Text="Nieuwe Categorie (Admin)" FontAttributes="Bold" />
+                <Entry Placeholder="Naam" Text="{Binding NewCategoryName}" />
+                <Button Text="Toevoegen" Command="{Binding AddCommand}" BackgroundColor="Green" TextColor="White" />
+            </VerticalStackLayout>
+        </VerticalStackLayout>
 
-        <CollectionView ItemsSource="{Binding Categorieen}">
+        <CollectionView Grid.Row="2" ItemsSource="{Binding Categorieen}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame Padding="12" Margin="0,6">
+                    <Frame Padding="12" Margin="10,6">
                         <Label Text="{Binding Naam}" FontSize="18" />
                     </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-    </VerticalStackLayout>
+    </Grid>
 
 </ContentPage>

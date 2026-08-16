@@ -1,28 +1,36 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @using MijnBibliotheekModels.Identity
+@using Microsoft.AspNetCore.Mvc.Localization
 @inject SignInManager<AppUser> SignInManager
 @inject UserManager<AppUser> UserManager
+@inject IViewLocalizer Localizer
 
 <ul class="navbar-nav">
     @if (SignInManager.IsSignedIn(User))
     {
         <li class="nav-item">
-            <span class="nav-link text-dark">Hallo, @User.Identity?.Name</span>
+            <span class="nav-link text-dark">@Localizer["Welcome"], @User.Identity?.Name</span>
         </li>
+        @if (User.IsInRole("Admin"))
+        {
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-controller="Gebruikers" asp-action="Index">Gebruikers</a>
+            </li>
+        }
         <li class="nav-item">
             <form class="d-inline" asp-controller="Account" asp-action="Logout" method="post">
                 @Html.AntiForgeryToken()
-                <button type="submit" class="btn btn-sm btn-outline-danger">Uitloggen</button>
+                <button type="submit" class="btn btn-sm btn-outline-danger">@Localizer["Logout"]</button>
             </form>
         </li>
     }
     else
     {
         <li class="nav-item">
-            <a class="btn btn-sm btn-outline-primary" href="/Identity/Account/Login">Inloggen</a>
+            <a class="btn btn-sm btn-outline-primary" asp-area="Identity" asp-page="/Account/Login">@Localizer["Login"]</a>
         </li>
         <li class="nav-item ms-2">
-            <a class="btn btn-sm btn-outline-secondary" href="/Identity/Account/Register">Registreren</a>
+            <a class="btn btn-sm btn-outline-secondary" asp-area="Identity" asp-page="/Account/Register">@Localizer["Register"]</a>
         </li>
     }
 </ul>

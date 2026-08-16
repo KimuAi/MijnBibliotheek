@@ -1,11 +1,12 @@
-﻿@{
-    ViewData["Title"] = "Home";
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = Localizer["WelcomeTitle"];
 }
 
 <div class="p-4 bg-light rounded">
-    <h1>Mijn Bibliotheek</h1>
+    <h1>@Localizer["WelcomeTitle"]</h1>
     <p class="mb-0">
-        Gebruik de navigatie bovenaan om Boeken, Categorieën en Uitleningen te beheren.
-        Log in of registreer via rechtsboven.
+        @Localizer["WelcomeText"]
     </p>
 </div>

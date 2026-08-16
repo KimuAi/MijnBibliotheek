@@ -4,19 +4,19 @@
              x:Class="MijnBibliotheekMAUI.Pages.BoekenPage"
              Title="Boeken">
 
-    <VerticalStackLayout Padding="16" Spacing="12">
+    <Grid RowDefinitions="Auto, Auto, *">
+        <VerticalStackLayout Grid.Row="0" Padding="10">
+            <Button Text="Vernieuwen" Command="{Binding RefreshCommand}" />
+            <Label Text="{Binding Error}" TextColor="Red" />
+        </VerticalStackLayout>
 
-        <Button Text="Vernieuwen" Command="{Binding RefreshCommand}" />
-
-        <Label Text="{Binding Error}" TextColor="Red" />
-
-        <CollectionView ItemsSource="{Binding Boeken}">
+        <CollectionView Grid.Row="2" ItemsSource="{Binding Boeken}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame Padding="12" Margin="0,6">
+                    <Frame Padding="12" Margin="10,6">
                         <VerticalStackLayout Spacing="6">
-                            <Label Text="{Binding Titel}" FontSize="18" />
-                            <Label Text="{Binding Auteur}" />
+                            <Label Text="{Binding Titel}" FontSize="18" FontAttributes="Bold" />
+                            <Label Text="{Binding Auteur}" TextColor="Gray" />
 
                             <Label>
                                 <Label.FormattedText>
@@ -33,6 +33,7 @@
                                         CommandParameter="{Binding .}" />
 
                                 <Button Text="Delete (admin)"
+                                        BackgroundColor="Red"
                                         IsVisible="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.IsAdmin}"
                                         Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.DeleteCommand}"
                                         CommandParameter="{Binding .}" />
@@ -42,6 +43,5 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-
-    </VerticalStackLayout>
+    </Grid>
 </ContentPage>

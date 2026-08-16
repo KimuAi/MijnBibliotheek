@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @model MijnBibliotheekWeb.ViewModels.BoekenListViewModel
 @inject MijnBibliotheekWeb.Services.LanguageService Lang
 @{
@@ -40,10 +41,42 @@
 <!-- Container for AJAX Partial Table -->
 <div id="boekenTableContainer">
     <partial name="_BoekenTablePartial" model="Model" />
+=======
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@model List<MijnBibliotheekModels.Models.Boek>
+@{
+    ViewData["Title"] = Localizer["Books"];
+    bool canEdit = User.IsInRole("Admin") || User.IsInRole("Medewerker");
+}
+
+<h2>@Localizer["Books"]</h2>
+
+<div class="row g-2 mb-3">
+    <div class="col-md-4">
+        <input id="searchInput" class="form-control" name="q" value="@ViewBag.Q" placeholder="@Localizer["SearchPlaceholder"]" />
+    </div>
+    <div class="col-md-3">
+        <select id="catSelect" class="form-select" name="catId" asp-items="ViewBag.Cats">
+            <option value="">@Localizer["AllCategories"]</option>
+        </select>
+    </div>
+    @if (canEdit)
+    {
+        <div class="col-md-3 ms-auto">
+            <a class="btn btn-primary w-100" asp-action="Create">@Localizer["NewBook"]</a>
+        </div>
+    }
+</div>
+
+<div id="boekenLijst">
+    <partial name="_BoekenTabel" model="Model" />
+>>>>>>> 841af99e05376b83ff6c2a2cf9b76484d6b0b01b
 </div>
 
 @section Scripts {
     <script>
+<<<<<<< HEAD
         let currentSortBy = "@Model.SortBy";
         let currentSortOrder = "@Model.SortOrder";
         let currentPageNumber = @Model.CurrentPage;
@@ -107,5 +140,28 @@
             })
             .catch(err => console.error("AJAX toggle fout:", err));
         }
+=======
+        $(document).ready(function () {
+            let timer;
+            
+            function updateLijst() {
+                var q = $('#searchInput').val();
+                var catId = $('#catSelect').val();
+                
+                $.get('@Url.Action("Index")', { q: q, catId: catId, partial: true }, function (data) {
+                    $('#boekenLijst').html(data);
+                });
+            }
+
+            $('#searchInput').on('input', function () {
+                clearTimeout(timer);
+                timer = setTimeout(updateLijst, 300); // Debounce
+            });
+
+            $('#catSelect').change(function () {
+                updateLijst();
+            });
+        });
+>>>>>>> 841af99e05376b83ff6c2a2cf9b76484d6b0b01b
     </script>
 }

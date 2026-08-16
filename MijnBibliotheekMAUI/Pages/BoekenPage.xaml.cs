@@ -15,6 +15,7 @@ public partial class BoekenPage : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        if (_vm.Boeken.Count == 0) await _vm.Load();
+        // Always reload to ensure IsAdmin and IsLoggedIn are updated
+        await _vm.Load();
     }
 }
