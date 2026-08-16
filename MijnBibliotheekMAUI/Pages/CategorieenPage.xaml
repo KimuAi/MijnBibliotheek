@@ -4,24 +4,85 @@
              x:Class="MijnBibliotheekMAUI.Pages.CategorieenPage"
              Title="Categorieën">
 
-    <Grid RowDefinitions="Auto, Auto, *">
-        <VerticalStackLayout Grid.Row="0" Padding="10" Spacing="10">
-            <Button Text="Vernieuwen" Command="{Binding RefreshCommand}" />
-            <Label Text="{Binding Error}" TextColor="Red" />
-            
-            <!-- Admin Add Section -->
-            <VerticalStackLayout IsVisible="{Binding IsAdmin}" Spacing="5">
-                <Label Text="Nieuwe Categorie (Admin)" FontAttributes="Bold" />
-                <Entry Placeholder="Naam" Text="{Binding NewCategoryName}" />
-                <Button Text="Toevoegen" Command="{Binding AddCommand}" BackgroundColor="Green" TextColor="White" />
-            </VerticalStackLayout>
+    <Grid RowDefinitions="Auto, Auto, Auto, *">
+
+        <!-- Vernieuwen + foutmelding -->
+        <VerticalStackLayout Grid.Row="0" Padding="12,10" Spacing="6">
+            <Button Text="🔄 Vernieuwen" Command="{Binding RefreshCommand}"
+                    BackgroundColor="#1976D2" TextColor="White" CornerRadius="8"/>
+            <Label Text="{Binding Error}" TextColor="Red" IsVisible="{Binding Error, Converter={x:StaticResource StringNotEmptyConverter}}"/>
+            <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" Color="#1976D2"/>
         </VerticalStackLayout>
 
-        <CollectionView Grid.Row="2" ItemsSource="{Binding Categorieen}">
+        <!-- Bewerkpaneel: verschijnt als IsEditing = True -->
+        <Frame Grid.Row="1" Padding="12" Margin="12,4" BackgroundColor="#FFF8E1"
+               IsVisible="{Binding IsEditing}">
+            <VerticalStackLayout Spacing="8">
+                <Label Text="✏️ Categorie Bewerken" FontAttributes="Bold" FontSize="14" TextColor="#E65100"/>
+                <Entry Placeholder="Nieuwe naam" Text="{Binding EditNaam}" />
+                <Grid ColumnDefinitions="*,*" ColumnSpacing="8">
+                    <Button Grid.Column="0" Text="💾 Opslaan"
+                            Command="{Binding SaveEditCommand}"
+                            BackgroundColor="#388E3C" TextColor="White" CornerRadius="8"/>
+                    <Button Grid.Column="1" Text="✖ Annuleren"
+                            Command="{Binding CancelEditCommand}"
+                            BackgroundColor="#757575" TextColor="White" CornerRadius="8"/>
+                </Grid>
+            </VerticalStackLayout>
+        </Frame>
+
+        <!-- Toevoegen paneel: enkel voor admins -->
+        <Frame Grid.Row="2" Padding="12" Margin="12,4" BackgroundColor="#E8F5E9"
+               IsVisible="{Binding IsAdmin}">
+            <VerticalStackLayout Spacing="8">
+                <Label Text="➕ Nieuwe Categorie Toevoegen" FontAttributes="Bold" FontSize="14" TextColor="#2E7D32"/>
+                <Entry Placeholder="Categorienaam" Text="{Binding NewCategoryName}" />
+                <Button Text="Toevoegen"
+                        Command="{Binding AddCommand}"
+                        BackgroundColor="#43A047" TextColor="White" CornerRadius="8"/>
+            </VerticalStackLayout>
+        </Frame>
+
+        <!-- Lijst van categorieën -->
+        <CollectionView Grid.Row="3" ItemsSource="{Binding Categorieen}">
+            <CollectionView.EmptyView>
+                <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="10" Padding="20">
+                    <Label Text="📂" FontSize="48" HorizontalTextAlignment="Center"/>
+                    <Label Text="Geen categorieën gevonden" HorizontalTextAlignment="Center" TextColor="Gray"/>
+                </VerticalStackLayout>
+            </CollectionView.EmptyView>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame Padding="12" Margin="10,6">
-                        <Label Text="{Binding Naam}" FontSize="18" />
+                    <Frame Padding="12" Margin="12,4" CornerRadius="10">
+                        <Grid ColumnDefinitions="*, Auto, Auto">
+                            <!-- Naam van de categorie -->
+                            <Label Grid.Column="0"
+                                   Text="{Binding Naam}"
+                                   FontSize="17"
+                                   VerticalOptions="Center"/>
+
+                            <!-- Bewerken knop (enkel voor admins) -->
+                            <Button Grid.Column="1"
+                                    Text="✏️"
+                                    ToolTipProperties.Text="Bewerken"
+                                    WidthRequest="44" HeightRequest="44"
+                                    BackgroundColor="#1976D2" TextColor="White"
+                                    CornerRadius="8" Margin="4,0"
+                                    IsVisible="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.IsAdmin}"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.EditCommand}"
+                                    CommandParameter="{Binding .}"/>
+
+                            <!-- Verwijderen knop (enkel voor admins) -->
+                            <Button Grid.Column="2"
+                                    Text="🗑️"
+                                    ToolTipProperties.Text="Verwijderen"
+                                    WidthRequest="44" HeightRequest="44"
+                                    BackgroundColor="#D32F2F" TextColor="White"
+                                    CornerRadius="8"
+                                    IsVisible="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.IsAdmin}"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.DeleteCommand}"
+                                    CommandParameter="{Binding .}"/>
+                        </Grid>
                     </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

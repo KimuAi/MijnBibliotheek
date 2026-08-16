@@ -148,6 +148,34 @@ public class BibliotheekApiService
         }
     }
 
+    // Admin actie: Bewerk een bestaande categorie via de REST API
+    public async Task<bool> UpdateCategorieAsync(int id, string naam)
+    {
+        try
+        {
+            var res = await _http.PutAsJsonAsync($"api/categorieenapi/{id}", new CategorieDto { Id = id, Naam = naam });
+            return res.IsSuccessStatusCode;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    // Admin actie: Verwijder (soft-delete) een categorie via de REST API
+    public async Task<bool> DeleteCategorieAsync(int id)
+    {
+        try
+        {
+            var res = await _http.DeleteAsync($"api/categorieenapi/{id}");
+            return res.IsSuccessStatusCode;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
     // Admin actie: Verwijder een boek via de REST API
     public async Task<bool> AdminBoekDeleteAsync(int id)
     {

@@ -2,57 +2,96 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MijnBibliotheekMAUI.Pages.UitleningenPage"
-             Title="Uitleningen">
-    
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Style TargetType="Button">
-                <Setter Property="CornerRadius" Value="8" />
-            </Style>
-             <!-- Simple inverse bool converter defined inline if possible or assume standard one exists, 
-                  but better to use Toolkit or manual trigger. 
-                  Let's use a DataTrigger for simplicity instead of converter to avoid creating new file -->
-        </ResourceDictionary>
-    </ContentPage.Resources>
+             Title="Mijn Uitleningen">
 
-    <Grid RowDefinitions="Auto, Auto, *">
-        <!-- Header -->
-        <VerticalStackLayout Grid.Row="0" Padding="10">
-            <Button Text="Vernieuwen" Command="{Binding RefreshCommand}" />
-            <Label Text="{Binding Error}" TextColor="Red" />
+    <Grid RowDefinitions="Auto, *">
+
+        <!-- Header met knop en fout -->
+        <VerticalStackLayout Grid.Row="0" Padding="12,10" Spacing="6">
+            <Button Text="🔄 Vernieuwen" Command="{Binding RefreshCommand}"
+                    BackgroundColor="#1976D2" TextColor="White" CornerRadius="8"/>
+            <Label Text="{Binding Error}" TextColor="Red"/>
+            <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" Color="#1976D2"/>
         </VerticalStackLayout>
 
-        <!-- List -->
-        <CollectionView Grid.Row="2" ItemsSource="{Binding Uitleningen}">
+        <!-- Lijst van uitleningen -->
+        <CollectionView Grid.Row="1" ItemsSource="{Binding Uitleningen}">
+
+            <!-- Lege toestand: geen uitleningen gevonden -->
+            <CollectionView.EmptyView>
+                <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="10" Padding="20">
+                    <Label Text="📚" FontSize="48" HorizontalTextAlignment="Center"/>
+                    <Label Text="Geen actieve uitleningen" HorizontalTextAlignment="Center" TextColor="Gray" FontSize="16"/>
+                    <Label Text="Leen een boek uit via de Boeken pagina" HorizontalTextAlignment="Center" TextColor="Gray" FontSize="13"/>
+                </VerticalStackLayout>
+            </CollectionView.EmptyView>
+
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame Padding="12" Margin="10,6">
-                        <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto">
-                            <Label Grid.Row="0" Grid.Column="0" Text="{Binding BoekTitel}" FontSize="18" FontAttributes="Bold"/>
-                            <Label Grid.Row="1" Grid.Column="0" Text="{Binding StartDatum, StringFormat='Geleend op: {0:dd-MM-yyyy}'}" FontSize="12" TextColor="Gray"/>
-                            
-                            <Button Grid.RowSpan="2" Grid.Column="1" 
-                                    Text="Terug" 
-                                    BackgroundColor="{StaticResource Primary}" 
-                                    TextColor="White"
-                                    HeightRequest="40"
-                                    Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.ReturnCommand}"
-                                    CommandParameter="{Binding .}">
-                                <Button.Triggers>
-                                    <DataTrigger TargetType="Button" Binding="{Binding IsTeruggebracht}" Value="True">
-                                        <Setter Property="IsEnabled" Value="False" />
-                                        <Setter Property="BackgroundColor" Value="Gray" />
-                                        <Setter Property="Text" Value="Klaar" />
-                                    </DataTrigger>
-                                </Button.Triggers>
-                            </Button>
-                             
-                             <Label Grid.RowSpan="2" Grid.Column="1"
-                                    Text="Gedaan" 
-                                    TextColor="Green"
-                                    VerticalOptions="Center"
-                                    IsVisible="{Binding IsTeruggebracht}" />
+                    <Frame Padding="14" Margin="12,6" CornerRadius="12">
+                        <Frame.Triggers>
+                            <!-- Grijze achtergrond als het boek al teruggebracht is -->
+                            <DataTrigger TargetType="Frame" Binding="{Binding IsTeruggebracht}" Value="True">
+                                <Setter Property="BackgroundColor" Value="#F5F5F5"/>
+                            </DataTrigger>
+                            <DataTrigger TargetType="Frame" Binding="{Binding IsTeruggebracht}" Value="False">
+                                <Setter Property="BackgroundColor" Value="#FFFFFF"/>
+                            </DataTrigger>
+                        </Frame.Triggers>
 
+                        <Grid RowDefinitions="Auto, Auto, Auto, Auto" ColumnDefinitions="*, Auto" RowSpacing="4">
+
+                            <!-- Boektitel -->
+                            <Label Grid.Row="0" Grid.Column="0"
+                                   Text="{Binding BoekTitel}"
+                                   FontSize="17" FontAttributes="Bold"/>
+
+                            <!-- Status badge: Actief of Teruggegeven -->
+                            <Frame Grid.Row="0" Grid.Column="1"
+                                   Padding="8,3" CornerRadius="10"
+                                   VerticalOptions="Start">
+                                <Frame.Triggers>
+                                    <DataTrigger TargetType="Frame" Binding="{Binding IsTeruggebracht}" Value="False">
+                                        <Setter Property="BackgroundColor" Value="#E3F2FD"/>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Frame" Binding="{Binding IsTeruggebracht}" Value="True">
+                                        <Setter Property="BackgroundColor" Value="#EEEEEE"/>
+                                    </DataTrigger>
+                                </Frame.Triggers>
+                                <Label FontSize="12" FontAttributes="Bold">
+                                    <Label.Triggers>
+                                        <DataTrigger TargetType="Label" Binding="{Binding IsTeruggebracht}" Value="False">
+                                            <Setter Property="Text" Value="🔵 Actief"/>
+                                            <Setter Property="TextColor" Value="#1565C0"/>
+                                        </DataTrigger>
+                                        <DataTrigger TargetType="Label" Binding="{Binding IsTeruggebracht}" Value="True">
+                                            <Setter Property="Text" Value="✅ Teruggegeven"/>
+                                            <Setter Property="TextColor" Value="#616161"/>
+                                        </DataTrigger>
+                                    </Label.Triggers>
+                                </Label>
+                            </Frame>
+
+                            <!-- Startdatum -->
+                            <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                                   Text="{Binding StartDatum, StringFormat='📅 Geleend op: {0:dd-MM-yyyy}'}"
+                                   FontSize="13" TextColor="#555"/>
+
+                            <!-- Einddatum (enkel tonen als het teruggebracht is) -->
+                            <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                                   Text="{Binding EindDatum, StringFormat='🔙 Teruggegeven op: {0:dd-MM-yyyy}'}"
+                                   FontSize="13" TextColor="#388E3C"
+                                   IsVisible="{Binding IsTeruggebracht}"/>
+
+                            <!-- Terugbrengen knop: enkel zichtbaar als nog niet teruggebracht -->
+                            <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                                    Text="📦 Terugbrengen"
+                                    BackgroundColor="#1976D2" TextColor="White"
+                                    CornerRadius="8" HeightRequest="40"
+                                    Margin="0,6,0,0"
+                                    IsVisible="{Binding IsTeruggebracht, Converter={x:StaticResource InverseBoolConverter}}"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.ReturnCommand}"
+                                    CommandParameter="{Binding .}"/>
                         </Grid>
                     </Frame>
                 </DataTemplate>
