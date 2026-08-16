@@ -51,7 +51,6 @@
     <ProjectReference Include="..\MijnBibliotheekModels\MijnBibliotheekModels.csproj" />
   </ItemGroup>
 
-<<<<<<< HEAD
   <ItemGroup>
     <Compile Update="Pages\BoekenPage.xaml.cs">
       <DependentUpon>BoekenPage.xaml</DependentUpon>
@@ -66,13 +65,6 @@
       <DependentUpon>UitleningenPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
-=======
-		<PackageReference Include="Microsoft.Extensions.Http" Version="9.0.10" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.10" />
-		<PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
-		<PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.2" />
-	</ItemGroup>
->>>>>>> 841af99e05376b83ff6c2a2cf9b76484d6b0b01b
 
   <ItemGroup>
     <MauiXaml Update="Pages\BoekenPage.xaml">

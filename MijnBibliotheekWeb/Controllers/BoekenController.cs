@@ -18,7 +18,6 @@ public class BoekenController : Controller
     // Dependency Injection: De DbContext wordt automatisch ingespoten via de constructor
     public BoekenController(BibliotheekContext db) => _db = db;
 
-<<<<<<< HEAD
     // GET: /Boeken/Index
     // Deze methode toont de hoofdpagina met boeken, inclusief zoeken (q), categorie filter (catId), sorteren en paginering
     public async Task<IActionResult> Index(
@@ -28,9 +27,6 @@ public class BoekenController : Controller
         string sortOrder = "asc",
         int pageNumber = 1,
         int pageSize = 5)
-=======
-    public async Task<IActionResult> Index(string? q = null, int? catId = null, bool partial = false)
->>>>>>> 841af99e05376b83ff6c2a2cf9b76484d6b0b01b
     {
         // Bouw het ViewModel op met alle gefilterde, gesorteerde en gepagineerde boeken
         var vm = await BuildBoekenListViewModelAsync(q, catId, sortBy, sortOrder, pageNumber, pageSize);
@@ -38,30 +34,8 @@ public class BoekenController : Controller
         // Vul de dropdown lijst van categorieën voor de zoek/filter balk op de pagina
         ViewBag.Cats = new SelectList(await _db.Categorieen.Where(c => !c.IsDeleted).OrderBy(c => c.Naam).ToListAsync(), "Id", "Naam", catId);
 
-<<<<<<< HEAD
         // Stuur het ViewModel naar de Razor View
         return View(vm);
-=======
-        if (!string.IsNullOrWhiteSpace(q))
-        {
-            var t = q.Trim().ToLower();
-            query = query.Where(b =>
-                b.Titel.ToLower().Contains(t) ||
-                b.Auteur.ToLower().Contains(t) ||
-                b.ISBN.ToLower().Contains(t));
-        }
-
-        ViewBag.Cats = new SelectList(await _db.Categorieen.OrderBy(c => c.Naam).ToListAsync(), "Id", "Naam");
-        ViewBag.Q = q;
-        ViewBag.CatId = catId;
-
-        var model = await query.OrderBy(b => b.Titel).ToListAsync();
-
-        if (partial)
-            return PartialView("_BoekenTabel", model);
-
-        return View(model);
->>>>>>> 841af99e05376b83ff6c2a2cf9b76484d6b0b01b
     }
 
     // GET: /Boeken/IndexPartial

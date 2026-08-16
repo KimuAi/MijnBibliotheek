@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "c:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj": {}
   },
   "projects": {
@@ -13,19 +12,6 @@
         "projectPath": "c:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekModels\\MijnBibliotheekModels.csproj",
         "packagesPath": "C:\\Users\\Kimbe\\.nuget\\packages\\",
         "outputPath": "c:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekModels\\obj\\",
-=======
-    "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek-2\\MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek-2\\MijnBibliotheekModels\\MijnBibliotheekModels.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek-2\\MijnBibliotheekModels\\MijnBibliotheekModels.csproj",
-        "projectName": "MijnBibliotheekModels",
-        "projectPath": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek-2\\MijnBibliotheekModels\\MijnBibliotheekModels.csproj",
-        "packagesPath": "C:\\Users\\Kimbe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek-2\\MijnBibliotheekModels\\obj\\",
->>>>>>> 841af99e05376b83ff6c2a2cf9b76484d6b0b01b
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -112,27 +98,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-<<<<<<< HEAD
-              "version": "[9.0.17, 9.0.17]"
+              "version": "[9.0.19, 9.0.19]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[9.0.17, 9.0.17]"
+              "version": "[9.0.19, 9.0.19]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[9.0.17, 9.0.17]"
-=======
-              "version": "[9.0.12, 9.0.12]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[9.0.12, 9.0.12]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[9.0.12, 9.0.12]"
->>>>>>> 841af99e05376b83ff6c2a2cf9b76484d6b0b01b
+              "version": "[9.0.19, 9.0.19]"
             }
           ],
           "frameworkReferences": {
@@ -140,8 +114,7 @@
               "privateAssets": "all"
             }
           },
-<<<<<<< HEAD
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.109/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.111/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -153,20 +126,6 @@
         "projectPath": "c:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj",
         "packagesPath": "C:\\Users\\Kimbe\\.nuget\\packages\\",
         "outputPath": "c:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\obj\\",
-=======
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek-2\\MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek-2\\MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj",
-        "projectName": "MijnBibliotheekWeb",
-        "projectPath": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek-2\\MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj",
-        "packagesPath": "C:\\Users\\Kimbe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek-2\\MijnBibliotheekWeb\\obj\\",
->>>>>>> 841af99e05376b83ff6c2a2cf9b76484d6b0b01b
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -188,13 +147,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-<<<<<<< HEAD
               "c:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekModels\\MijnBibliotheekModels.csproj": {
                 "projectPath": "c:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekModels\\MijnBibliotheekModels.csproj"
-=======
-              "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek-2\\MijnBibliotheekModels\\MijnBibliotheekModels.csproj": {
-                "projectPath": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek-2\\MijnBibliotheekModels\\MijnBibliotheekModels.csproj"
->>>>>>> 841af99e05376b83ff6c2a2cf9b76484d6b0b01b
               }
             }
           }
@@ -274,35 +228,19 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-<<<<<<< HEAD
-              "version": "[9.0.17, 9.0.17]"
+              "version": "[9.0.19, 9.0.19]"
             },
             {
               "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[9.0.17, 9.0.17]"
+              "version": "[9.0.19, 9.0.19]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[9.0.17, 9.0.17]"
+              "version": "[9.0.19, 9.0.19]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[9.0.17, 9.0.17]"
-=======
-              "version": "[9.0.12, 9.0.12]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[9.0.12, 9.0.12]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[9.0.12, 9.0.12]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[9.0.12, 9.0.12]"
->>>>>>> 841af99e05376b83ff6c2a2cf9b76484d6b0b01b
+              "version": "[9.0.19, 9.0.19]"
             }
           ],
           "frameworkReferences": {
@@ -313,11 +251,7 @@
               "privateAssets": "all"
             }
           },
-<<<<<<< HEAD
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.109/PortableRuntimeIdentifierGraph.json"
-=======
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json"
->>>>>>> 841af99e05376b83ff6c2a2cf9b76484d6b0b01b
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.111/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

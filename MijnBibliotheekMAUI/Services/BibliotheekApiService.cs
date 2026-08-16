@@ -61,7 +61,6 @@ public class BibliotheekApiService
     // Haalt de eigen uitleningen op van de ingelogde gebruiker
     public async Task<List<UitleningDto>> GetMijnUitleningenAsync()
     {
-<<<<<<< HEAD
         var bases = new[] { "api/uitleningenapi", "api/uitleningen" };
         var tails = new[] { "mijn", "mine", "me", "mijnuitleningen", "mijn-uitleningen", "user" };
 
@@ -89,16 +88,11 @@ public class BibliotheekApiService
 
         // Als geen enkele API-route bereikbaar is (offline): geef de lokaal opgeslagen uitleningen uit SQLite terug
         return await _localDb.GetUitleningenAsync();
-=======
-        // Directe call naar de endpoint (Web API gebruikt User claim)
-        return await GetAsync<List<UitleningDto>>("api/uitleningenapi") ?? new();
->>>>>>> 841af99e05376b83ff6c2a2cf9b76484d6b0b01b
     }
 
     // Stuurt een verzoek naar de API om een boek uit te lenen
     public async Task<bool> LeenBoekAsync(int boekId)
     {
-<<<<<<< HEAD
         var candidates = new[]
         {
             $"api/uitleningenapi/leen/{boekId}",
@@ -124,17 +118,38 @@ public class BibliotheekApiService
         }
 
         return false;
-=======
-        // Correcte route: api/uitleningenapi/{id}/leen
-        var url = $"api/uitleningenapi/{boekId}/leen";
-        var res = await _http.PostAsync(url, null);
-        return res.IsSuccessStatusCode;
->>>>>>> 841af99e05376b83ff6c2a2cf9b76484d6b0b01b
+    }
+
+    // Stuurt een verzoek naar de API om een boek terug te brengen
+    public async Task<bool> ReturnBoekAsync(int uitleningId)
+    {
+        try
+        {
+            var res = await _http.PostAsync($"api/uitleningenapi/terug/{uitleningId}", null);
+            return res.IsSuccessStatusCode;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    // Admin actie: Maak een nieuwe categorie aan via de REST API
+    public async Task<bool> CreateCategorieAsync(string naam)
+    {
+        try
+        {
+            var res = await _http.PostAsJsonAsync("api/categorieenapi", new CategorieDto { Naam = naam });
+            return res.IsSuccessStatusCode;
+        }
+        catch
+        {
+            return false;
+        }
     }
 
     // Admin actie: Verwijder een boek via de REST API
     public async Task<bool> AdminBoekDeleteAsync(int id)
-<<<<<<< HEAD
     {
         try
         {
@@ -146,23 +161,6 @@ public class BibliotheekApiService
             return false;
         }
     }
-=======
-        => (await _http.DeleteAsync($"api/boekenapi/{id}")).IsSuccessStatusCode;
-
-    public async Task<bool> ReturnBoekAsync(int uitleningId)
-    {
-        var res = await _http.PostAsync($"api/uitleningenapi/{uitleningId}/terug", null);
-        return res.IsSuccessStatusCode;
-    }
-
-    public async Task<bool> CreateCategorieAsync(string naam)
-    {
-         var res = await _http.PostAsJsonAsync("api/categorieenapi", new CategorieDto { Naam = naam });
-         return res.IsSuccessStatusCode;
-    }
-
-    // helper methods
->>>>>>> 841af99e05376b83ff6c2a2cf9b76484d6b0b01b
 
     // Helper methode: Voert een HTTP GET request uit en converteert het antwoord (JSON) naar C# objecten
     private async Task<T?> GetAsync<T>(string url)
