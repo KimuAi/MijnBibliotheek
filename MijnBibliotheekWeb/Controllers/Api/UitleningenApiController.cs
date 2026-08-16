@@ -1,31 +1,96 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using MijnBibliotheekModels.Data;
+using MijnBibliotheekModels.Models;
+using MijnBibliotheekWeb.ApiDtos;
 
 namespace MijnBibliotheekWeb.Controllers.Api;
-// API controller voor uitlening-gerelateerde endpoints
+
+/// API voor uitleningen (mijn uitleningen, lenen, terugbrengen)
 [ApiController]
 [Route("api/uitleningenapi")]
 public class UitleningenApiController : ControllerBase
-{   // Endpoint om alle uitleningen van de ingelogde gebruiker op te halen
+{
+    private readonly BibliotheekContext _db;
+
+    public UitleningenApiController(BibliotheekContext db) => _db = db;
+
+    // GET: api/uitleningenapi/mijn
     [Authorize]
-    [HttpGet]
-    public IActionResult Get()
+    [HttpGet("mijn")]
+    public async Task<IActionResult> GetMijn()
     {
-        return Ok(Array.Empty<object>());
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        if (string.IsNullOrEmpty(userId)) return Unauthorized();
+
+        var lijst = await _db.Uitleningen
+            .Where(u => u.AppUserId == userId)
+            .Include(u => u.Boek)
+            .AsNoTracking()
+            .OrderByDescending(u => u.StartDatum)
+            .Select(u => new UitleningDto
+            {
+                Id = u.Id,
+                BoekId = u.BoekId,
+                BoekTitel = u.Boek != null ? u.Boek.Titel : string.Empty,
+                AppUserId = u.AppUserId,
+                AppUserNaam = string.Empty,
+                StartDatum = u.StartDatum,
+                EindDatum = u.EindDatum,
+                IsTeruggebracht = u.IsTeruggebracht
+            })
+            .ToListAsync();
+
+        return Ok(lijst);
     }
-    // Endpoint om een boek uit te lenen voor de ingelogde gebruiker
+
+    // POST: api/uitleningenapi/leen/5
     [Authorize]
-    [HttpPost("{boekId:int}/leen")]
-    public IActionResult Leen(int boekId)
+    [HttpPost("leen/{boekId:int}")]
+    public async Task<IActionResult> Leen(int boekId)
     {
-       
-        return Ok(new { Success = true, BoekId = boekId });
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        if (string.IsNullOrEmpty(userId)) return Unauthorized();
+
+        var boek = await _db.Boeken.FindAsync(boekId);
+        if (boek == null) return NotFound();
+
+        if (!boek.IsBeschikbaar) return BadRequest(new { message = "Boek niet beschikbaar" });
+
+        boek.IsBeschikbaar = false;
+
+        var uit = new Uitlening
+        {
+            BoekId = boekId,
+            AppUserId = userId,
+            StartDatum = DateTime.UtcNow,
+            IsTeruggebracht = false
+        };
+
+        _db.Uitleningen.Add(uit);
+        await _db.SaveChangesAsync();
+
+        return Ok(new { success = true, uitleningId = uit.Id });
     }
-    //  Alleen admin-gebruikers kunnen een uitlening als teruggebracht markeren
-    [Authorize(Roles = "Admin")]
-    [HttpPost("{uitleningId:int}/terug")]
-    public IActionResult Terug(int uitleningId)
+
+    // POST: api/uitleningenapi/terug/5
+    [Authorize(Roles = "Admin,Medewerker")]
+    [HttpPost("terug/{id:int}")]
+    public async Task<IActionResult> Terug(int id)
     {
-        return Ok(new { Success = true, UitleningId = uitleningId });
+        var uit = await _db.Uitleningen.Include(u => u.Boek).FirstOrDefaultAsync(u => u.Id == id);
+        if (uit == null) return NotFound();
+
+        if (!uit.IsTeruggebracht)
+        {
+            uit.IsTeruggebracht = true;
+            uit.EindDatum = DateTime.UtcNow;
+            if (uit.Boek != null) uit.Boek.IsBeschikbaar = true;
+            await _db.SaveChangesAsync();
+        }
+
+        return Ok();
     }
 }

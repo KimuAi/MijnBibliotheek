@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekWPF\obj\Debug\net9.0-windows\
+c:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekWPF\obj\Debug\net9.0-windows\
 MijnBibliotheekWPF
 none
 false
-TRACE;DEBUG;NET;NET9_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NET9_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekWPF\App.xaml
+TRACE;DEBUG;NET;NET9_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NET9_0_OR_GREATER;NETCOREAPP1_0_OR_GREATER;NETCOREAPP1_1_OR_GREATER;NETCOREAPP2_0_OR_GREATER;NETCOREAPP2_1_OR_GREATER;NETCOREAPP2_2_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
+c:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekWPF\App.xaml
 7902579343
 
 11-1635462933
-262-2093570850
+2621952381064
 Controls\LabeledTextBox.xaml;Windows\AddBoekWindow.xaml;Windows\BoekenWindow.xaml;Windows\CategorienWindow.xaml;Windows\LoginWindow.xaml;Windows\MainWindow.xaml;Windows\UitleningWindow.xaml;
 
 False

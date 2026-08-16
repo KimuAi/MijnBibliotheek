@@ -1,15 +1,22 @@
-﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MijnBibliotheekModels.Data;
 using MijnBibliotheekModels.Identity;
+using MijnBibliotheekWeb.Middleware;
+using MijnBibliotheekWeb.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//MVC + Razor PagesIdentity UI
+// MVC + Razor Pages Identity UI
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
-//DbContext SQLite
+// Multi-language & HttpContext Accessor
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<LanguageService>();
+builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
+
+// DbContext SQLite
 var cs = builder.Configuration.GetConnectionString("DefaultConnection")
          ?? "Data Source=bibliotheek.web.db";
 
@@ -22,7 +29,7 @@ builder.Services
     {
         options.SignIn.RequireConfirmedAccount = false;
 
-        // simpele password rules zodat seeding altijd lukt
+        // Password rules
         options.Password.RequireDigit = false;
         options.Password.RequireLowercase = false;
         options.Password.RequireUppercase = false;
@@ -65,7 +72,7 @@ builder.Services.ConfigureApplicationCookie(options =>
     };
 });
 
-//zodat MAUI mag connecteren
+// CORS for MAUI app
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("maui", policy =>
@@ -100,6 +107,15 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+// Culture & Custom Cookie Middleware
+app.UseMiddleware<CookieLoggingMiddleware>();
+app.UseRequestLocalization(options =>
+{
+    options.SetDefaultCulture("nl-BE");
+    options.AddSupportedCultures("nl-BE", "en-US");
+    options.AddSupportedUICultures("nl-BE", "en-US");
+});
 
 app.UseCors("maui");
 

@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -8,7 +8,8 @@ using MijnBibliotheekModels.Models;
 using MijnBibliotheekWeb.ViewModels;
 
 namespace MijnBibliotheekWeb.Controllers;
-// Controller voor het beheren van uitleningen in de bibliotheekapplicatie.
+
+// Controller voor het registreren en opvolgen van uitleningen
 [Authorize]
 public class UitleningenController : Controller
 {
@@ -16,6 +17,8 @@ public class UitleningenController : Controller
 
     public UitleningenController(BibliotheekContext db) => _db = db;
 
+    // GET: /Uitleningen/Index
+    // Toont een overzicht van alle uitleningen met het gekoppelde boek en het ingelogde lid
     public async Task<IActionResult> Index()
     {
         var list = await _db.Uitleningen
@@ -26,22 +29,28 @@ public class UitleningenController : Controller
 
         return View(list);
     }
-    // Toont het formulier voor het aanmaken van een nieuwe uitlening.
+
+    // GET: /Uitleningen/Create
+    // Toont het formulier om een nieuw boek uit te lenen aan een lid
     [Authorize(Roles = "Admin,Medewerker")]
     [HttpGet]
     public async Task<IActionResult> Create()
     {
+        // Alleen beschikbare boeken tonen in de dropdown
         ViewBag.Boeken = new SelectList(
-            await _db.Boeken.Where(b => b.IsBeschikbaar).OrderBy(b => b.Titel).ToListAsync(),
+            await _db.Boeken.Where(b => b.IsBeschikbaar && !b.IsDeleted).OrderBy(b => b.Titel).ToListAsync(),
             "Id", "Titel");
 
+        // Alle geregistreerde leden tonen in de dropdown
         ViewBag.Users = new SelectList(
             await _db.Users.OrderBy(u => u.VolledigeNaam).ToListAsync(),
             "Id", "VolledigeNaam");
 
         return View(new UitleningCreateVm());
     }
-    // Verwerkt het indienen van het formulier voor het aanmaken van een nieuwe uitlening.
+
+    // POST: /Uitleningen/Create
+    // Slaat de nieuwe uitlening op in de databank en zet de status van het boek op niet-beschikbaar
     [Authorize(Roles = "Admin,Medewerker")]
     [HttpPost]
     public async Task<IActionResult> Create(UitleningCreateVm vm)
@@ -49,7 +58,7 @@ public class UitleningenController : Controller
         if (!ModelState.IsValid)
         {
             ViewBag.Boeken = new SelectList(
-                await _db.Boeken.Where(b => b.IsBeschikbaar).OrderBy(b => b.Titel).ToListAsync(),
+                await _db.Boeken.Where(b => b.IsBeschikbaar && !b.IsDeleted).OrderBy(b => b.Titel).ToListAsync(),
                 "Id", "Titel");
 
             ViewBag.Users = new SelectList(
@@ -59,15 +68,17 @@ public class UitleningenController : Controller
             return View(vm);
         }
 
-        var boek = await _db.Boeken.FindAsync(vm.BoekId);
+        var boek = await _db.Boeken.FirstOrDefaultAsync(b => b.Id == vm.BoekId && !b.IsDeleted);
         if (boek == null || !boek.IsBeschikbaar)
         {
-            ModelState.AddModelError("", "Boek is niet beschikbaar.");
+            TempData["Error"] = "Dit boek is momenteel niet beschikbaar om uit te lenen.";
             return RedirectToAction(nameof(Create));
         }
 
+        // Het boek is nu uitgeleend, dus markeer als niet beschikbaar
         boek.IsBeschikbaar = false;
 
+        // Maak de nieuwe uitlening aan
         _db.Uitleningen.Add(new Uitlening
         {
             BoekId = vm.BoekId,
@@ -78,9 +89,12 @@ public class UitleningenController : Controller
         });
 
         await _db.SaveChangesAsync();
+        TempData["Success"] = "Uitlening succesvol geregistreerd.";
         return RedirectToAction(nameof(Index));
     }
-    // Markeert een uitlening als teruggebracht.
+
+    // POST: /Uitleningen/Terug/5
+    // Registreert het terugbrengen van een boek en maakt het boek weer beschikbaar
     [Authorize(Roles = "Admin,Medewerker")]
     [HttpPost]
     public async Task<IActionResult> Terug(int id)
@@ -93,6 +107,7 @@ public class UitleningenController : Controller
             uit.IsTeruggebracht = true;
             if (uit.Boek != null) uit.Boek.IsBeschikbaar = true;
             await _db.SaveChangesAsync();
+            TempData["Success"] = "Boek succesvol geregistreerd als teruggebracht.";
         }
 
         return RedirectToAction(nameof(Index));

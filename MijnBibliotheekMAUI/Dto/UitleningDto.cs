@@ -1,4 +1,5 @@
-﻿namespace MijnBibliotheekMAUI.Dtos;
+namespace MijnBibliotheekMAUI.Dtos;
+
 /// Data Transfer Object voor Uitlening
 public class UitleningDto
 {
@@ -7,5 +8,5 @@ public class UitleningDto
     public string BoekTitel { get; set; } = "";
     public DateTime StartDatum { get; set; }
     public DateTime? EindDatum { get; set; }
+    public bool IsTeruggebracht { get; set; }
 }
-    

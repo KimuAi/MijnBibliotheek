@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging;
 using MijnBibliotheekMAUI.Models;
 using MijnBibliotheekMAUI.Pages;
 using MijnBibliotheekMAUI.Services;
@@ -52,6 +52,7 @@ public static class MauiProgram
         });
 
         // Services
+        builder.Services.AddSingleton<LocalDbService>();
         builder.Services.AddSingleton<AuthApiService>();
         builder.Services.AddSingleton<BibliotheekApiService>();
 

@@ -1,82 +1,103 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using MijnBibliotheekModels.Identity;
+using MijnBibliotheekWeb.ApiDtos;
+using System.Security.Claims;
 
-namespace MijnBibliotheekWeb.Controllers.Api
+namespace MijnBibliotheekWeb.Controllers.Api;
+
+/// API voor authenticatie (login/register/me/logout)
+[ApiController]
+[Route("api/auth")]
+public class AuthController : ControllerBase
 {
-    // API-controller voor alle authenticatie-acties (login, register, logout, me)
-    [ApiController]
-    [Route("api/auth")]
-    public class AuthController : ControllerBase
+    private readonly SignInManager<AppUser> _signInManager;
+    private readonly UserManager<AppUser> _userManager;
+    private readonly IEmailSender _emailSender;
+
+    public AuthController(
+        SignInManager<AppUser> signInManager,
+        UserManager<AppUser> userManager,
+        IEmailSender emailSender)
     {
-        private readonly UserManager<AppUser> _userMgr;
-        private readonly SignInManager<AppUser> _signInMgr;
+        _signInManager = signInManager;
+        _userManager = userManager;
+        _emailSender = emailSender;
+    }
 
-        public AuthController(UserManager<AppUser> userMgr, SignInManager<AppUser> signInMgr)
+    // POST: api/auth/login
+    [HttpPost("login")]
+    public async Task<IActionResult> Login([FromBody] LoginRequestDto dto)
+    {
+        if (!ModelState.IsValid) return BadRequest();
+
+        var user = await _userManager.FindByEmailAsync(dto.Email);
+        if (user == null) return Unauthorized();
+
+        var res = await _signInManager.PasswordSignInAsync(user, dto.Password, dto.RememberMe, lockoutOnFailure: false);
+        if (!res.Succeeded) return Unauthorized();
+
+        return Ok();
+    }
+
+    // POST: api/auth/register
+    [HttpPost("register")]
+    public async Task<IActionResult> Register([FromBody] RegisterRequestDto dto)
+    {
+        if (!ModelState.IsValid) return BadRequest();
+
+        var user = new AppUser
         {
-            _userMgr = userMgr;
-            _signInMgr = signInMgr;
-        }
+            UserName = dto.Email,
+            Email = dto.Email,
+            VolledigeNaam = dto.FullName,
+            EmailConfirmed = false // stuur bevestiging
+        };
 
-        public record LoginDto(string Email, string Password);
-        public record RegisterDto(string FullName, string Email, string Password);
+        var result = await _userManager.CreateAsync(user, dto.Password);
+        if (!result.Succeeded) return BadRequest(result.Errors);
 
-        [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] LoginDto dto)
+        // gebruiker standaard rol 'Lid' toekennen
+        await _userManager.AddToRoleAsync(user, "Lid");
+
+        // genereer bevestigingstoken en stuur e-mail (wachtwoord/credentials nooit in repo)
+        var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+        var confirmUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, token }, Request.Scheme) ?? "n/a";
+
+        // Nederlandse commentaar: e-mail met bevestigingslink wordt verstuurd. Zorg dat Smtp is geconfigureerd.
+        await _emailSender.SendEmailAsync(user.Email, "Bevestig je e-mail", $"Klik op de link om te bevestigen: {confirmUrl}");
+
+        return Ok();
+    }
+
+    // POST: api/auth/logout
+    [Authorize]
+    [HttpPost("logout")]
+    public async Task<IActionResult> Logout()
+    {
+        await _signInManager.SignOutAsync();
+        return Ok();
+    }
+
+    // GET: api/auth/me
+    [Authorize]
+    [HttpGet("me")]
+    public async Task<IActionResult> Me()
+    {
+        var user = await _userManager.GetUserAsync(User);
+        if (user == null) return Unauthorized();
+
+        var roles = await _userManager.GetRolesAsync(user);
+
+        var me = new MeDto
         {
-            var user = await _userMgr.FindByEmailAsync(dto.Email);
-            if (user == null) return Unauthorized("Invalid login attempt.");
+            UserName = user.UserName ?? string.Empty,
+            FullName = user.VolledigeNaam,
+            Roles = roles.ToList()
+        };
 
-            if (user.IsGeblokkeerd) return Forbid();
-
-            var res = await _signInMgr.PasswordSignInAsync(user, dto.Password, isPersistent: true, lockoutOnFailure: false);
-            if (!res.Succeeded) return Unauthorized("Invalid login attempt.");
-
-            return Ok();
-        }
-        // Registratie van nieuwe gebruikers
-        [HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody] RegisterDto dto)
-        {
-            var user = new AppUser
-            {
-                UserName = dto.Email,
-                Email = dto.Email,
-                VolledigeNaam = dto.FullName,
-                IsGeblokkeerd = false
-            };
-
-            var res = await _userMgr.CreateAsync(user, dto.Password);
-            if (!res.Succeeded) return BadRequest(res.Errors);
-
-            // standaard rol
-            await _userMgr.AddToRoleAsync(user, "Lid");
-            return Ok();
-        }
-        // Logout van de huidige gebruiker
-        [HttpPost("logout")]
-        public async Task<IActionResult> Logout()
-        {
-            await _signInMgr.SignOutAsync();
-            return Ok();
-        }
-        // Geeft info terug over de ingelogde gebruiker
-        [Authorize]
-        [HttpGet("me")]
-        public async Task<IActionResult> Me()
-        {
-            var user = await _userMgr.GetUserAsync(User);
-            if (user == null) return Unauthorized();
-
-            var roles = await _userMgr.GetRolesAsync(user);
-
-            return Ok(new
-            {
-                userName = user.UserName ?? "",
-                fullName = user.VolledigeNaam,
-                roles = roles
-            });
-        }
+        return Ok(me);
     }
 }

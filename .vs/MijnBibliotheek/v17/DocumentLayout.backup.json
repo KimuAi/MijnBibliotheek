@@ -1,7 +1,66 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Kimbe\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250606001\\buildTransitive\\Microsoft.WindowsAppSDK.SelfContained.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A3BD722-1554-46FE-9C01-A01D22FEC192}|MijnBibliotheekMAUI\\MijnBibliotheekMAUI.csproj|c:\\users\\kimbe\\source\\repos\\mijnbibliotheek\\mijnbibliotheekmaui\\mijnbibliotheekmaui.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{1A3BD722-1554-46FE-9C01-A01D22FEC192}|MijnBibliotheekMAUI\\MijnBibliotheekMAUI.csproj|solutionrelative:mijnbibliotheekmaui\\mijnbibliotheekmaui.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\10.0.102\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|c:\\users\\kimbe\\source\\repos\\mijnbibliotheek\\mijnbibliotheekweb\\middleware\\cookieloggingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|solutionrelative:mijnbibliotheekweb\\middleware\\cookieloggingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|c:\\users\\kimbe\\source\\repos\\mijnbibliotheek\\mijnbibliotheekweb\\services\\smtpemailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|solutionrelative:mijnbibliotheekweb\\services\\smtpemailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|c:\\users\\kimbe\\source\\repos\\mijnbibliotheek\\mijnbibliotheekweb\\controllers\\api\\categorieenapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|solutionrelative:mijnbibliotheekweb\\controllers\\api\\categorieenapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|c:\\users\\kimbe\\source\\repos\\mijnbibliotheek\\mijnbibliotheekweb\\apidtos\\categoriedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|solutionrelative:mijnbibliotheekweb\\apidtos\\categoriedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|c:\\users\\kimbe\\source\\repos\\mijnbibliotheek\\mijnbibliotheekweb\\controllers\\api\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|solutionrelative:mijnbibliotheekweb\\controllers\\api\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|c:\\users\\kimbe\\source\\repos\\mijnbibliotheek\\mijnbibliotheekweb\\controllers\\api\\uitleningenapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|solutionrelative:mijnbibliotheekweb\\controllers\\api\\uitleningenapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|c:\\users\\kimbe\\source\\repos\\mijnbibliotheek\\mijnbibliotheekweb\\controllers\\api\\boekenapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|solutionrelative:mijnbibliotheekweb\\controllers\\api\\boekenapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|c:\\users\\kimbe\\source\\repos\\mijnbibliotheek\\mijnbibliotheekweb\\apidtos\\medto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|solutionrelative:mijnbibliotheekweb\\apidtos\\medto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|c:\\users\\kimbe\\source\\repos\\mijnbibliotheek\\mijnbibliotheekweb\\apidtos\\registerrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|solutionrelative:mijnbibliotheekweb\\apidtos\\registerrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|c:\\users\\kimbe\\source\\repos\\mijnbibliotheek\\mijnbibliotheekweb\\apidtos\\loginrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|solutionrelative:mijnbibliotheekweb\\apidtos\\loginrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|c:\\users\\kimbe\\source\\repos\\mijnbibliotheek\\mijnbibliotheekweb\\apidtos\\uitleningdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|solutionrelative:mijnbibliotheekweb\\apidtos\\uitleningdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|c:\\users\\kimbe\\source\\repos\\mijnbibliotheek\\mijnbibliotheekweb\\apidtos\\boekdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|solutionrelative:mijnbibliotheekweb\\apidtos\\boekdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +68,192 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Microsoft.WindowsAppSDK.SelfContained.targets",
+              "DocumentMoniker": "C:\\Users\\Kimbe\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250606001\\buildTransitive\\Microsoft.WindowsAppSDK.SelfContained.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250606001\\buildTransitive\\Microsoft.WindowsAppSDK.SelfContained.targets",
+              "ToolTip": "C:\\Users\\Kimbe\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250606001\\buildTransitive\\Microsoft.WindowsAppSDK.SelfContained.targets",
+              "RelativeToolTip": "..\\..\\..\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250606001\\buildTransitive\\Microsoft.WindowsAppSDK.SelfContained.targets",
+              "ViewState": "AgIAADwAAAAAAAAAAAAgwEwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2026-01-31T19:41:06.328Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Microsoft.PackageDependencyResolution.targets",
+              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\10.0.102\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\10.0.102\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\10.0.102\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\10.0.102\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "ViewState": "AgIAAPkAAAAAAAAAAAAgwAkBAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2026-01-31T19:38:03.585Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MijnBibliotheekMAUI.csproj",
+              "DocumentMoniker": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekMAUI\\MijnBibliotheekMAUI.csproj",
+              "RelativeDocumentMoniker": "MijnBibliotheekMAUI\\MijnBibliotheekMAUI.csproj",
+              "ToolTip": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekMAUI\\MijnBibliotheekMAUI.csproj",
+              "RelativeToolTip": "MijnBibliotheekMAUI\\MijnBibliotheekMAUI.csproj",
+              "ViewState": "AgIAADsAAAAAAAAAAAAqwEIAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-01-31T19:31:21.303Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CookieLoggingMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\Middleware\\CookieLoggingMiddleware.cs",
+              "RelativeDocumentMoniker": "MijnBibliotheekWeb\\Middleware\\CookieLoggingMiddleware.cs",
+              "ToolTip": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\Middleware\\CookieLoggingMiddleware.cs",
+              "RelativeToolTip": "MijnBibliotheekWeb\\Middleware\\CookieLoggingMiddleware.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-31T19:20:17.36Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SmtpEmailSender.cs",
+              "DocumentMoniker": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\Services\\SmtpEmailSender.cs",
+              "RelativeDocumentMoniker": "MijnBibliotheekWeb\\Services\\SmtpEmailSender.cs",
+              "ToolTip": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\Services\\SmtpEmailSender.cs",
+              "RelativeToolTip": "MijnBibliotheekWeb\\Services\\SmtpEmailSender.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-31T19:20:11.515Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CategorieenApiController.cs",
+              "DocumentMoniker": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\Controllers\\Api\\CategorieenApiController.cs",
+              "RelativeDocumentMoniker": "MijnBibliotheekWeb\\Controllers\\Api\\CategorieenApiController.cs",
+              "ToolTip": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\Controllers\\Api\\CategorieenApiController.cs",
+              "RelativeToolTip": "MijnBibliotheekWeb\\Controllers\\Api\\CategorieenApiController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-31T19:19:53.834Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CategorieDto.cs",
+              "DocumentMoniker": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\ApiDtos\\CategorieDto.cs",
+              "RelativeDocumentMoniker": "MijnBibliotheekWeb\\ApiDtos\\CategorieDto.cs",
+              "ToolTip": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\ApiDtos\\CategorieDto.cs",
+              "RelativeToolTip": "MijnBibliotheekWeb\\ApiDtos\\CategorieDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-31T19:19:48.411Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\Controllers\\Api\\AuthController.cs",
+              "RelativeDocumentMoniker": "MijnBibliotheekWeb\\Controllers\\Api\\AuthController.cs",
+              "ToolTip": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\Controllers\\Api\\AuthController.cs",
+              "RelativeToolTip": "MijnBibliotheekWeb\\Controllers\\Api\\AuthController.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAwwGYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-31T19:17:30.159Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UitleningenApiController.cs",
+              "DocumentMoniker": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\Controllers\\Api\\UitleningenApiController.cs",
+              "RelativeDocumentMoniker": "MijnBibliotheekWeb\\Controllers\\Api\\UitleningenApiController.cs",
+              "ToolTip": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\Controllers\\Api\\UitleningenApiController.cs",
+              "RelativeToolTip": "MijnBibliotheekWeb\\Controllers\\Api\\UitleningenApiController.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAwwF8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-31T19:16:54.501Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "BoekenApiController.cs",
+              "DocumentMoniker": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\Controllers\\Api\\BoekenApiController.cs",
+              "RelativeDocumentMoniker": "MijnBibliotheekWeb\\Controllers\\Api\\BoekenApiController.cs",
+              "ToolTip": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\Controllers\\Api\\BoekenApiController.cs",
+              "RelativeToolTip": "MijnBibliotheekWeb\\Controllers\\Api\\BoekenApiController.cs",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAEwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-31T19:16:27.978Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MeDto.cs",
+              "DocumentMoniker": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\ApiDtos\\MeDto.cs",
+              "RelativeDocumentMoniker": "MijnBibliotheekWeb\\ApiDtos\\MeDto.cs",
+              "ToolTip": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\ApiDtos\\MeDto.cs",
+              "RelativeToolTip": "MijnBibliotheekWeb\\ApiDtos\\MeDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-31T19:16:25.237Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "RegisterRequestDto.cs",
+              "DocumentMoniker": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\ApiDtos\\RegisterRequestDto.cs",
+              "RelativeDocumentMoniker": "MijnBibliotheekWeb\\ApiDtos\\RegisterRequestDto.cs",
+              "ToolTip": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\ApiDtos\\RegisterRequestDto.cs",
+              "RelativeToolTip": "MijnBibliotheekWeb\\ApiDtos\\RegisterRequestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-31T19:16:21.986Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "LoginRequestDto.cs",
+              "DocumentMoniker": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\ApiDtos\\LoginRequestDto.cs",
+              "RelativeDocumentMoniker": "MijnBibliotheekWeb\\ApiDtos\\LoginRequestDto.cs",
+              "ToolTip": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\ApiDtos\\LoginRequestDto.cs",
+              "RelativeToolTip": "MijnBibliotheekWeb\\ApiDtos\\LoginRequestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-31T19:16:18.988Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "UitleningDto.cs",
+              "DocumentMoniker": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\ApiDtos\\UitleningDto.cs",
+              "RelativeDocumentMoniker": "MijnBibliotheekWeb\\ApiDtos\\UitleningDto.cs",
+              "ToolTip": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\ApiDtos\\UitleningDto.cs",
+              "RelativeToolTip": "MijnBibliotheekWeb\\ApiDtos\\UitleningDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-31T19:16:13.39Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "BoekDto.cs",
+              "DocumentMoniker": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\ApiDtos\\BoekDto.cs",
+              "RelativeDocumentMoniker": "MijnBibliotheekWeb\\ApiDtos\\BoekDto.cs",
+              "ToolTip": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\ApiDtos\\BoekDto.cs",
+              "RelativeToolTip": "MijnBibliotheekWeb\\ApiDtos\\BoekDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-31T19:15:46.096Z"
             }
           ]
         }

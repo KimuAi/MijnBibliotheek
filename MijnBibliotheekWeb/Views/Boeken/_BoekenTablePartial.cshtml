@@ -1,0 +1,117 @@
+@model MijnBibliotheekWeb.ViewModels.BoekenListViewModel
+@inject MijnBibliotheekWeb.Services.LanguageService Lang
+@{
+    bool canEdit = User.IsInRole("Admin") || User.IsInRole("Medewerker");
+    string nextSortOrder(string column) => (Model.SortBy.Equals(column, StringComparison.OrdinalIgnoreCase) && Model.SortOrder == "asc") ? "desc" : "asc";
+    string sortIcon(string column) => Model.SortBy.Equals(column, StringComparison.OrdinalIgnoreCase) ? (Model.SortOrder == "asc" ? " ▲" : " ▼") : "";
+}
+
+<div class="table-responsive shadow-sm rounded">
+    <table class="table table-hover align-middle mb-0">
+        <thead class="table-dark">
+            <tr>
+                <th>
+                    <a href="javascript:void(0)" onclick="loadBoekenPage(1, 'Titel', '@nextSortOrder("Titel")')" class="text-white text-decoration-none fw-bold">
+                        @Lang.GetText("TableTitle")@sortIcon("Titel")
+                    </a>
+                </th>
+                <th>
+                    <a href="javascript:void(0)" onclick="loadBoekenPage(1, 'Auteur', '@nextSortOrder("Auteur")')" class="text-white text-decoration-none fw-bold">
+                        @Lang.GetText("TableAuthor")@sortIcon("Auteur")
+                    </a>
+                </th>
+                <th>
+                    <a href="javascript:void(0)" onclick="loadBoekenPage(1, 'ISBN', '@nextSortOrder("ISBN")')" class="text-white text-decoration-none fw-bold">
+                        @Lang.GetText("TableISBN")@sortIcon("ISBN")
+                    </a>
+                </th>
+                <th>
+                    <a href="javascript:void(0)" onclick="loadBoekenPage(1, 'Categorie', '@nextSortOrder("Categorie")')" class="text-white text-decoration-none fw-bold">
+                        @Lang.GetText("TableCategory")@sortIcon("Categorie")
+                    </a>
+                </th>
+                <th>
+                    <a href="javascript:void(0)" onclick="loadBoekenPage(1, 'Status', '@nextSortOrder("Status")')" class="text-white text-decoration-none fw-bold">
+                        @Lang.GetText("TableStatus")@sortIcon("Status")
+                    </a>
+                </th>
+                @if (canEdit)
+                {
+                    <th class="text-end">@Lang.GetText("TableActions")</th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @if (!Model.Boeken.Any())
+            {
+                <tr>
+                    <td colspan="@(canEdit ? 6 : 5)" class="text-center py-4 text-muted">
+                        <em>@Lang.GetText("NoBooksFound")</em>
+                    </td>
+                </tr>
+            }
+            @foreach (var b in Model.Boeken)
+            {
+                <tr id="row-boek-@b.Id">
+                    <td class="fw-semibold">@b.Titel</td>
+                    <td>@b.Auteur</td>
+                    <td><code>@b.ISBN</code></td>
+                    <td><span class="badge bg-secondary">@(b.Categorie?.Naam ?? "-")</span></td>
+                    <td>
+                        <span id="badge-status-@b.Id" class="badge @(b.IsBeschikbaar ? "bg-success" : "bg-warning text-dark")">
+                            @(b.IsBeschikbaar ? Lang.GetText("Available") : Lang.GetText("Borrowed"))
+                        </span>
+                    </td>
+                    @if (canEdit)
+                    {
+                        <td class="text-end">
+                            <button type="button" onclick="quickToggleBoek(@b.Id)" class="btn btn-sm btn-outline-info me-1" title="@Lang.GetText("QuickToggle")">
+                                ⚡ AJAX
+                            </button>
+                            <a class="btn btn-sm btn-outline-primary me-1" asp-action="Edit" asp-route-id="@b.Id">
+                                @Lang.GetText("Edit")
+                            </a>
+                            <form asp-action="Delete" asp-route-id="@b.Id" method="post" class="d-inline" onsubmit="return confirm('@Lang.GetText("ConfirmDelete")');">
+                                <button class="btn btn-sm btn-outline-danger" type="submit">
+                                    @Lang.GetText("Delete")
+                                </button>
+                            </form>
+                        </td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- Pagination Footer -->
+<div class="d-flex justify-content-between align-items-center mt-3 flex-wrap">
+    <div class="text-muted small">
+        @Lang.GetText("Page") <strong>@Model.CurrentPage</strong> @Lang.GetText("Of") <strong>@Model.TotalPages</strong> (@Model.TotalItems @Lang.GetText("TotalItems"))
+    </div>
+    <nav aria-label="Boeken paginering">
+        <ul class="pagination pagination-sm mb-0">
+            <li class="page-item @(!Model.HasPreviousPage ? "disabled" : "")">
+                <a class="page-link" href="javascript:void(0)" onclick="loadBoekenPage(@(Model.CurrentPage - 1), '@Model.SortBy', '@Model.SortOrder')">
+                    &laquo; @Lang.GetText("Previous")
+                </a>
+            </li>
+
+            @for (int p = 1; p <= Model.TotalPages; p++)
+            {
+                int pageNum = p;
+                <li class="page-item @(pageNum == Model.CurrentPage ? "active" : "")">
+                    <a class="page-link" href="javascript:void(0)" onclick="loadBoekenPage(@pageNum, '@Model.SortBy', '@Model.SortOrder')">
+                        @pageNum
+                    </a>
+                </li>
+            }
+
+            <li class="page-item @(!Model.HasNextPage ? "disabled" : "")">
+                <a class="page-link" href="javascript:void(0)" onclick="loadBoekenPage(@(Model.CurrentPage + 1), '@Model.SortBy', '@Model.SortOrder')">
+                    @Lang.GetText("Next") &raquo;
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>

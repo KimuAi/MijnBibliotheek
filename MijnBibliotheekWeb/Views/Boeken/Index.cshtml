@@ -1,64 +1,111 @@
-﻿@model List<MijnBibliotheekModels.Models.Boek>
+@model MijnBibliotheekWeb.ViewModels.BoekenListViewModel
+@inject MijnBibliotheekWeb.Services.LanguageService Lang
 @{
-    ViewData["Title"] = "Boeken";
+    ViewData["Title"] = Lang.GetText("MenuBoeken");
     bool canEdit = User.IsInRole("Admin") || User.IsInRole("Medewerker");
 }
 
-<h2>Boeken</h2>
-
-<form method="get" class="row g-2 mb-3">
-    <div class="col-md-4">
-        <input class="form-control" name="q" value="@ViewBag.Q" placeholder="Zoek titel/auteur/ISBN..." />
-    </div>
-    <div class="col-md-3">
-        <select class="form-select" name="catId" asp-items="ViewBag.Cats">
-            <option value="">Alle categorieën</option>
-        </select>
-    </div>
-    <div class="col-md-2">
-        <button class="btn btn-secondary w-100" type="submit">Filter</button>
-    </div>
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2><i class="bi bi-book"></i> @Lang.GetText("MenuBoeken")</h2>
     @if (canEdit)
     {
-        <div class="col-md-3">
-            <a class="btn btn-primary w-100" asp-action="Create">Nieuw boek</a>
-        </div>
+        <a class="btn btn-primary" asp-action="Create">
+            <i class="bi bi-plus-lg"></i> @Lang.GetText("NewBookButton")
+        </a>
     }
+</div>
+
+<!-- Search & Filter Controls -->
+<form id="boekenFilterForm" onsubmit="event.preventDefault(); loadBoekenPage(1);" class="card card-body bg-light mb-4 shadow-sm">
+    <div class="row g-3 align-items-center">
+        <div class="col-md-5">
+            <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-search"></i> 🔍</span>
+                <input type="text" id="qInput" class="form-control" placeholder="@Lang.GetText("SearchPlaceholder")" value="@Model.SearchQuery" onkeyup="debounceSearch()" />
+            </div>
+        </div>
+        <div class="col-md-4">
+            <select id="catIdSelect" class="form-select" asp-items="ViewBag.Cats" onchange="loadBoekenPage(1)">
+                <option value="">-- @Lang.GetText("AllCategories") --</option>
+            </select>
+        </div>
+        <div class="col-md-3 d-flex gap-2">
+            <button class="btn btn-secondary w-100" type="button" onclick="loadBoekenPage(1)">
+                @Lang.GetText("FilterButton")
+            </button>
+        </div>
+    </div>
 </form>
 
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Titel</th>
-            <th>Auteur</th>
-            <th>ISBN</th>
-            <th>Categorie</th>
-            <th>Beschikbaar</th>
-            @if (canEdit)
-            {
-                <th>Acties</th>
-            }
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var b in Model)
-        {
-            <tr>
-                <td>@b.Titel</td>
-                <td>@b.Auteur</td>
-                <td>@b.ISBN</td>
-                <td>@b.Categorie?.Naam</td>
-                <td>@(b.IsBeschikbaar ? "Ja" : "Nee")</td>
-                @if (canEdit)
-                {
-                    <td>
-                        <a class="btn btn-sm btn-outline-primary" asp-action="Edit" asp-route-id="@b.Id">Bewerk</a>
-                        <form asp-action="Delete" asp-route-id="@b.Id" method="post" class="d-inline">
-                            <button class="btn btn-sm btn-outline-danger" type="submit">Verwijder</button>
-                        </form>
-                    </td>
-                }
-            </tr>
+<!-- Container for AJAX Partial Table -->
+<div id="boekenTableContainer">
+    <partial name="_BoekenTablePartial" model="Model" />
+</div>
+
+@section Scripts {
+    <script>
+        let currentSortBy = "@Model.SortBy";
+        let currentSortOrder = "@Model.SortOrder";
+        let currentPageNumber = @Model.CurrentPage;
+        let searchTimeout = null;
+
+        function debounceSearch() {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                loadBoekenPage(1);
+            }, 300);
         }
-    </tbody>
-</table>
+
+        function loadBoekenPage(page = 1, sortBy = currentSortBy, sortOrder = currentSortOrder) {
+            currentPageNumber = page;
+            currentSortBy = sortBy;
+            currentSortOrder = sortOrder;
+
+            const q = document.getElementById("qInput").value;
+            const catId = document.getElementById("catIdSelect").value;
+
+            const container = document.getElementById("boekenTableContainer");
+            container.style.opacity = "0.5";
+
+            const url = `@Url.Action("IndexPartial", "Boeken")?q=${encodeURIComponent(q)}&catId=${encodeURIComponent(catId)}&sortBy=${encodeURIComponent(sortBy)}&sortOrder=${encodeURIComponent(sortOrder)}&pageNumber=${page}`;
+
+            fetch(url, {
+                headers: { 'X-Requested-With': 'XMLHttpRequest' }
+            })
+            .then(response => response.text())
+            .then(html => {
+                container.innerHTML = html;
+                container.style.opacity = "1.0";
+            })
+            .catch(err => {
+                console.error("Fout bij laden van boeken via AJAX:", err);
+                container.style.opacity = "1.0";
+            });
+        }
+
+        function quickToggleBoek(id) {
+            fetch(`@Url.Action("QuickToggleAvailability", "Boeken")?id=${id}`, {
+                method: 'POST',
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    const badge = document.getElementById(`badge-status-${id}`);
+                    if (badge) {
+                        if (data.isBeschikbaar) {
+                            badge.className = "badge bg-success";
+                            badge.innerText = "@Lang.GetText("Available")";
+                        } else {
+                            badge.className = "badge bg-warning text-dark";
+                            badge.innerText = "@Lang.GetText("Borrowed")";
+                        }
+                    }
+                }
+            })
+            .catch(err => console.error("AJAX toggle fout:", err));
+        }
+    </script>
+}
