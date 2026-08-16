@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekMAUI\\MijnBibliotheekMAUI.csproj": {}
+    "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekMAUI\\MijnBibliotheekMAUI.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekMAUI\\MijnBibliotheekMAUI.csproj": {
+    "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekMAUI\\MijnBibliotheekMAUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekMAUI\\MijnBibliotheekMAUI.csproj",
+        "projectUniqueName": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekMAUI\\MijnBibliotheekMAUI.csproj",
         "projectName": "MijnBibliotheekMAUI",
-        "projectPath": "c:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekMAUI\\MijnBibliotheekMAUI.csproj",
+        "projectPath": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekMAUI\\MijnBibliotheekMAUI.csproj",
         "packagesPath": "C:\\Users\\Kimbe\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekMAUI\\obj\\",
+        "outputPath": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekMAUI\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
@@ -34,8 +34,8 @@
           "net9.0-windows10.0.19041": {
             "targetAlias": "net9.0-windows10.0.19041.0",
             "projectReferences": {
-              "c:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekModels\\MijnBibliotheekModels.csproj": {
-                "projectPath": "c:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekModels\\MijnBibliotheekModels.csproj"
+              "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekModels\\MijnBibliotheekModels.csproj": {
+                "projectPath": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekModels\\MijnBibliotheekModels.csproj"
               }
             }
           }
@@ -154,14 +154,14 @@
         }
       }
     },
-    "c:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekModels\\MijnBibliotheekModels.csproj": {
+    "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekModels\\MijnBibliotheekModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekModels\\MijnBibliotheekModels.csproj",
+        "projectUniqueName": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekModels\\MijnBibliotheekModels.csproj",
         "projectName": "MijnBibliotheekModels",
-        "projectPath": "c:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekModels\\MijnBibliotheekModels.csproj",
+        "projectPath": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekModels\\MijnBibliotheekModels.csproj",
         "packagesPath": "C:\\Users\\Kimbe\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekModels\\obj\\",
+        "outputPath": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekModels\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

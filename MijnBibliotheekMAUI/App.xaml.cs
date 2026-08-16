@@ -10,10 +10,8 @@ public partial class App : Application
         Services = services;
     }
 
-    protected override Window CreateWindow(IActivationState activationState)
+    protected override Window CreateWindow(IActivationState? activationState)
     {
-        var window = base.CreateWindow(activationState);
-        window.Page = Services.GetRequiredService<AppShell>();
-        return window;
+        return new Window(Services.GetRequiredService<AppShell>());
     }
 }

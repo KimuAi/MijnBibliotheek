@@ -10,7 +10,7 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MijnBibliotheekMAUI
-build_property.ProjectDir = c:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekMAUI\
+build_property.ProjectDir = C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekMAUI\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.CsWinRTAotOptimizerEnabled = true
@@ -24,55 +24,55 @@ build_property.CsWinRTUseWindowsUIXamlProjections = false
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[c:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekMAUI/App.xaml]
+[C:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekMAUI/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MijnBibliotheekMAUI.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[c:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekMAUI/AppShell.xaml]
+[C:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekMAUI/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MijnBibliotheekMAUI.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[c:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekMAUI/MainPage.xaml]
+[C:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekMAUI/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MijnBibliotheekMAUI.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 
-[c:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekMAUI/Pages/BoekenPage.xaml]
+[C:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekMAUI/Pages/BoekenPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MijnBibliotheekMAUI.Pages.BoekenPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\BoekenPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\BoekenPage.xaml
 
-[c:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekMAUI/Pages/CategorieenPage.xaml]
+[C:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekMAUI/Pages/CategorieenPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MijnBibliotheekMAUI.Pages.CategorieenPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\CategorieenPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\CategorieenPage.xaml
 
-[c:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekMAUI/Pages/LoginPage.xaml]
+[C:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekMAUI/Pages/LoginPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MijnBibliotheekMAUI.Pages.LoginPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\LoginPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\LoginPage.xaml
 
-[c:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekMAUI/Pages/UitleningenPage.xaml]
+[C:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekMAUI/Pages/UitleningenPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MijnBibliotheekMAUI.Pages.UitleningenPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\UitleningenPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\UitleningenPage.xaml
 
-[c:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekMAUI/Resources/Styles/Colors.xaml]
+[C:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekMAUI/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MijnBibliotheekMAUI.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
-[c:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekMAUI/Resources/Styles/Styles.xaml]
+[C:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekMAUI/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MijnBibliotheekMAUI.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml

@@ -6,59 +6,59 @@
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Kimbe\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250606001\\buildTransitive\\Microsoft.WindowsAppSDK.SelfContained.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1A3BD722-1554-46FE-9C01-A01D22FEC192}|MijnBibliotheekMAUI\\MijnBibliotheekMAUI.csproj|c:\\users\\kimbe\\source\\repos\\mijnbibliotheek\\mijnbibliotheekmaui\\mijnbibliotheekmaui.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{1A3BD722-1554-46FE-9C01-A01D22FEC192}|MijnBibliotheekMAUI\\MijnBibliotheekMAUI.csproj|solutionrelative:mijnbibliotheekmaui\\mijnbibliotheekmaui.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\10.0.102\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|c:\\users\\kimbe\\source\\repos\\mijnbibliotheek\\mijnbibliotheekweb\\middleware\\cookieloggingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|solutionrelative:mijnbibliotheekweb\\middleware\\cookieloggingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekMAUI\\MijnBibliotheekMAUI.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MijnBibliotheekMAUI\\MijnBibliotheekMAUI.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|c:\\users\\kimbe\\source\\repos\\mijnbibliotheek\\mijnbibliotheekweb\\services\\smtpemailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|solutionrelative:mijnbibliotheekweb\\services\\smtpemailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\Middleware\\CookieLoggingMiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MijnBibliotheekWeb\\Middleware\\CookieLoggingMiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|c:\\users\\kimbe\\source\\repos\\mijnbibliotheek\\mijnbibliotheekweb\\controllers\\api\\categorieenapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|solutionrelative:mijnbibliotheekweb\\controllers\\api\\categorieenapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\Services\\SmtpEmailSender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MijnBibliotheekWeb\\Services\\SmtpEmailSender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|c:\\users\\kimbe\\source\\repos\\mijnbibliotheek\\mijnbibliotheekweb\\apidtos\\categoriedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|solutionrelative:mijnbibliotheekweb\\apidtos\\categoriedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\Controllers\\Api\\CategorieenApiController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MijnBibliotheekWeb\\Controllers\\Api\\CategorieenApiController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|c:\\users\\kimbe\\source\\repos\\mijnbibliotheek\\mijnbibliotheekweb\\controllers\\api\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|solutionrelative:mijnbibliotheekweb\\controllers\\api\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\ApiDtos\\CategorieDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MijnBibliotheekWeb\\ApiDtos\\CategorieDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|c:\\users\\kimbe\\source\\repos\\mijnbibliotheek\\mijnbibliotheekweb\\controllers\\api\\uitleningenapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|solutionrelative:mijnbibliotheekweb\\controllers\\api\\uitleningenapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\Controllers\\Api\\AuthController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MijnBibliotheekWeb\\Controllers\\Api\\AuthController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|c:\\users\\kimbe\\source\\repos\\mijnbibliotheek\\mijnbibliotheekweb\\controllers\\api\\boekenapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|solutionrelative:mijnbibliotheekweb\\controllers\\api\\boekenapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\Controllers\\Api\\UitleningenApiController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MijnBibliotheekWeb\\Controllers\\Api\\UitleningenApiController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|c:\\users\\kimbe\\source\\repos\\mijnbibliotheek\\mijnbibliotheekweb\\apidtos\\medto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|solutionrelative:mijnbibliotheekweb\\apidtos\\medto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\Controllers\\Api\\BoekenApiController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MijnBibliotheekWeb\\Controllers\\Api\\BoekenApiController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|c:\\users\\kimbe\\source\\repos\\mijnbibliotheek\\mijnbibliotheekweb\\apidtos\\registerrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|solutionrelative:mijnbibliotheekweb\\apidtos\\registerrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\ApiDtos\\MeDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MijnBibliotheekWeb\\ApiDtos\\MeDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|c:\\users\\kimbe\\source\\repos\\mijnbibliotheek\\mijnbibliotheekweb\\apidtos\\loginrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|solutionrelative:mijnbibliotheekweb\\apidtos\\loginrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\ApiDtos\\RegisterRequestDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MijnBibliotheekWeb\\ApiDtos\\RegisterRequestDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|c:\\users\\kimbe\\source\\repos\\mijnbibliotheek\\mijnbibliotheekweb\\apidtos\\uitleningdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|solutionrelative:mijnbibliotheekweb\\apidtos\\uitleningdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\ApiDtos\\LoginRequestDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MijnBibliotheekWeb\\ApiDtos\\LoginRequestDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|c:\\users\\kimbe\\source\\repos\\mijnbibliotheek\\mijnbibliotheekweb\\apidtos\\boekdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FAA235F2-4F68-4069-BD6B-755F142F03E8}|MijnBibliotheekWeb\\MijnBibliotheekWeb.csproj|solutionrelative:mijnbibliotheekweb\\apidtos\\boekdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\ApiDtos\\UitleningDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MijnBibliotheekWeb\\ApiDtos\\UitleningDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekWeb\\ApiDtos\\BoekDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MijnBibliotheekWeb\\ApiDtos\\BoekDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -89,7 +89,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Microsoft.PackageDependencyResolution.targets",
               "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\10.0.102\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\10.0.102\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
@@ -101,7 +101,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "MijnBibliotheekMAUI.csproj",
               "DocumentMoniker": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekMAUI\\MijnBibliotheekMAUI.csproj",
               "RelativeDocumentMoniker": "MijnBibliotheekMAUI\\MijnBibliotheekMAUI.csproj",
@@ -109,8 +109,7 @@
               "RelativeToolTip": "MijnBibliotheekMAUI\\MijnBibliotheekMAUI.csproj",
               "ViewState": "AgIAADsAAAAAAAAAAAAqwEIAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-01-31T19:31:21.303Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-31T19:31:21.303Z"
             },
             {
               "$type": "Document",

@@ -19,97 +19,97 @@ build_property.TargetFrameworkIdentifier = .NETCoreApp
 build_property.TargetFrameworkVersion = v9.0
 build_property.RootNamespace = MijnBibliotheekWeb
 build_property.RootNamespace = MijnBibliotheekWeb
-build_property.ProjectDir = c:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekWeb\
+build_property.ProjectDir = C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekWeb\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = c:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekWeb
+build_property.MSBuildProjectDirectory = C:\Users\Kimbe\source\repos\MijnBibliotheek\MijnBibliotheekWeb
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[c:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Account/AccessDenied.cshtml]
+[C:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Account/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Boeken/Create.cshtml]
+[C:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Boeken/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9la2VuXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Boeken/Edit.cshtml]
+[C:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Boeken/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9la2VuXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Boeken/Index.cshtml]
+[C:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Boeken/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9la2VuXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Boeken/_BoekenTabel.cshtml]
+[C:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Boeken/_BoekenTabel.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9la2VuXF9Cb2VrZW5UYWJlbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Boeken/_BoekenTablePartial.cshtml]
+[C:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Boeken/_BoekenTablePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9la2VuXF9Cb2VrZW5UYWJsZVBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Categorieen/Edit.cshtml]
+[C:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Categorieen/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllZW5cRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Categorieen/Index.cshtml]
+[C:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Categorieen/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllZW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Categorieen/reate.cshtml]
+[C:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Categorieen/reate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllZW5ccmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Gebruikers/Index.cshtml]
+[C:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Gebruikers/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VicnVpa2Vyc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Home/Index.cshtml]
+[C:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Home/Privacy.cshtml]
+[C:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Shared/Error.cshtml]
+[C:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Uitleningen/Create.cshtml]
+[C:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Uitleningen/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWl0bGVuaW5nZW5cQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Uitleningen/Index.cshtml]
+[C:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Uitleningen/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVWl0bGVuaW5nZW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/_ViewImports.cshtml]
+[C:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/_ViewStart.cshtml]
+[C:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Shared/_Layout.cshtml]
+[C:/Users/Kimbe/source/repos/MijnBibliotheek/MijnBibliotheekWeb/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-yzhkdqhuzs

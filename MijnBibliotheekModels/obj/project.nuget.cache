@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jFScyeIyeTg=",
+  "dgSpecHash": "7F+0N2P4xIo=",
   "success": true,
-  "projectFilePath": "c:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekModels\\MijnBibliotheekModels.csproj",
+  "projectFilePath": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekModels\\MijnBibliotheekModels.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kimbe\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Kimbe\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\9.0.10\\microsoft.aspnetcore.cryptography.internal.9.0.10.nupkg.sha512",
@@ -63,8 +63,8 @@
     "C:\\Users\\Kimbe\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\Kimbe\\.nuget\\packages\\system.text.json\\9.0.10\\system.text.json.9.0.10.nupkg.sha512",
     "C:\\Users\\Kimbe\\.nuget\\packages\\system.threading.channels\\7.0.0\\system.threading.channels.7.0.0.nupkg.sha512",
-    "C:\\Users\\Kimbe\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.19\\microsoft.netcore.app.ref.9.0.19.nupkg.sha512",
     "C:\\Users\\Kimbe\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\9.0.19\\microsoft.windowsdesktop.app.ref.9.0.19.nupkg.sha512",
+    "C:\\Users\\Kimbe\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.19\\microsoft.netcore.app.ref.9.0.19.nupkg.sha512",
     "C:\\Users\\Kimbe\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\9.0.19\\microsoft.aspnetcore.app.ref.9.0.19.nupkg.sha512"
   ],
   "logs": []
