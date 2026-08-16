@@ -1,0 +1,28 @@
+# IDE & Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build output & binaries
+[bB]in/
+[oO]bj/
+[dD]ebug/
+[rR]elease/
+**/bin/
+**/obj/
+
+# Temporary logs & databases
+*.cache
+*.pdb
+*.db
+*.db-shm
+*.db-wal
+*.log
+*.tmp
+
+# NuGet
+packages/
+*.nuget.props
+*.nuget.targets
