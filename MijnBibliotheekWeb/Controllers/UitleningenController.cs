@@ -95,7 +95,6 @@ public class UitleningenController : Controller
 
     // POST: /Uitleningen/Terug/5
     // Registreert het terugbrengen van een boek en maakt het boek weer beschikbaar
-    [Authorize(Roles = "Admin,Medewerker")]
     [HttpPost]
     public async Task<IActionResult> Terug(int id)
     {

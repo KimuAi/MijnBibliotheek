@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7F+0N2P4xIo=",
+  "dgSpecHash": "jFScyeIyeTg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekModels\\MijnBibliotheekModels.csproj",
+  "projectFilePath": "c:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekModels\\MijnBibliotheekModels.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kimbe\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Kimbe\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\9.0.10\\microsoft.aspnetcore.cryptography.internal.9.0.10.nupkg.sha512",

@@ -8,7 +8,8 @@ using MijnBibliotheekWeb.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // MVC + Razor Pages Identity UI
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews()
+    .AddViewLocalization();
 builder.Services.AddRazorPages();
 
 // Multi-language & HttpContext Accessor

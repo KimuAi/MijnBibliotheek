@@ -24,8 +24,8 @@ public class LanguageService
             {
                 return cul.StartsWith("en", StringComparison.OrdinalIgnoreCase) ? "en-US" : "nl-BE";
             }
-            // Standaard terugval op de systeemcultuur
-            return CultureInfo.CurrentCulture.TwoLetterISOLanguageName.Equals("en", StringComparison.OrdinalIgnoreCase) ? "en-US" : "nl-BE";
+            // Standaard altijd Nederlands (nl-BE)
+            return "nl-BE";
         }
     }
 

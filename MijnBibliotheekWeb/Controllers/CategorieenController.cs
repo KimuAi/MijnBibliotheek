@@ -33,6 +33,24 @@ public class CategorieenController : Controller
         return RedirectToAction(nameof(Index));
     }
 
+    // POST: /Categorieen/Edit
+    // Bewerkt de naam van een categorie (alleen voor Admin & Medewerker)
+    [Authorize(Roles = "Admin,Medewerker")]
+    [HttpPost]
+    public async Task<IActionResult> Edit(int id, string naam)
+    {
+        var cat = await _db.Categorieen.FirstOrDefaultAsync(c => c.Id == id && !c.IsDeleted);
+        if (cat == null) return NotFound();
+
+        if (!string.IsNullOrWhiteSpace(naam))
+        {
+            cat.Naam = naam.Trim();
+            await _db.SaveChangesAsync();
+            TempData["Success"] = "Categorie succesvol bijgewerkt.";
+        }
+        return RedirectToAction(nameof(Index));
+    }
+
     // POST: /Categorieen/Delete/5
     // Voert een soft-delete uit op een categorie
     [Authorize(Roles = "Admin,Medewerker")]

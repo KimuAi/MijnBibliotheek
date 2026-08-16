@@ -1,4 +1,4 @@
-﻿@model List<MijnBibliotheekModels.Models.Uitlening>
+@model List<MijnBibliotheekModels.Models.Uitlening>
 @{
     ViewData["Title"] = "Uitleningen";
     bool canEdit = User.IsInRole("Admin") || User.IsInRole("Medewerker");
@@ -6,46 +6,68 @@
 
 <h2>Uitleningen</h2>
 
-@if (canEdit)
+@if (TempData["Success"] != null)
 {
-    <a class="btn btn-primary mb-3" asp-action="Create">Nieuwe uitlening</a>
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
 }
 
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Boek</th>
-            <th>Lid</th>
-            <th>Start</th>
-            <th>Eind</th>
-            <th>Terug</th>
-            @if (canEdit)
-            {
-                <th>Acties</th>
-            }
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var u in Model)
-        {
+@if (canEdit)
+{
+    <a class="btn btn-primary mb-3" asp-action="Create">+ Nieuwe uitlening registreren</a>
+}
+
+<div class="table-responsive shadow-sm rounded">
+    <table class="table table-hover align-middle mb-0">
+        <thead class="table-dark">
             <tr>
-                <td>@u.Boek?.Titel</td>
-                <td>@u.AppUser?.VolledigeNaam</td>
-                <td>@u.StartDatum.ToString("dd/MM/yyyy")</td>
-                <td>@(u.EindDatum?.ToString("dd/MM/yyyy") ?? "-")</td>
-                <td>@(u.IsTeruggebracht ? "Ja" : "Nee")</td>
-                @if (canEdit)
-                {
+                <th>Boek</th>
+                <th>Lid</th>
+                <th>Startdatum</th>
+                <th>Einddatum</th>
+                <th>Status</th>
+                <th class="text-end">Acties</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (!Model.Any())
+            {
+                <tr>
+                    <td colspan="6" class="text-center py-4 text-muted">Geen uitleningen gevonden.</td>
+                </tr>
+            }
+            @foreach (var u in Model)
+            {
+                <tr>
+                    <td class="fw-bold">@u.Boek?.Titel</td>
+                    <td>@(u.AppUser?.VolledigeNaam ?? u.AppUser?.UserName ?? "Lid")</td>
+                    <td>@u.StartDatum.ToString("dd/MM/yyyy")</td>
+                    <td>@(u.EindDatum?.ToString("dd/MM/yyyy") ?? "-")</td>
                     <td>
+                        @if (u.IsTeruggebracht)
+                        {
+                            <span class="badge bg-success">✓ Teruggebracht</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-warning text-dark">🔒 Uitgeleend</span>
+                        }
+                    </td>
+                    <td class="text-end">
                         @if (!u.IsTeruggebracht)
                         {
-                            <form asp-action="Terug" asp-route-id="@u.Id" method="post">
-                                <button class="btn btn-sm btn-outline-success" type="submit">Terugbrengen</button>
+                            <form asp-action="Terug" asp-route-id="@u.Id" method="post" class="d-inline">
+                                <button class="btn btn-sm btn-outline-success" type="submit">
+                                    ↩ Terugbrengen
+                                </button>
                             </form>
                         }
                     </td>
-                }
-            </tr>
-        }
-    </tbody>
-</table>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

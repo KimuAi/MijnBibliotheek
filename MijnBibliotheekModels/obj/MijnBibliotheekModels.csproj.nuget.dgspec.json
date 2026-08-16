@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekModels\\MijnBibliotheekModels.csproj": {}
+    "c:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekModels\\MijnBibliotheekModels.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekModels\\MijnBibliotheekModels.csproj": {
+    "c:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekModels\\MijnBibliotheekModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekModels\\MijnBibliotheekModels.csproj",
+        "projectUniqueName": "c:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekModels\\MijnBibliotheekModels.csproj",
         "projectName": "MijnBibliotheekModels",
-        "projectPath": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekModels\\MijnBibliotheekModels.csproj",
+        "projectPath": "c:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekModels\\MijnBibliotheekModels.csproj",
         "packagesPath": "C:\\Users\\Kimbe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekModels\\obj\\",
+        "outputPath": "c:\\Users\\Kimbe\\source\\repos\\MijnBibliotheek\\MijnBibliotheekModels\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

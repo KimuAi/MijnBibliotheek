@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MijnBibliotheekModels.Identity;
 using MijnBibliotheekModels.Models;
@@ -28,8 +28,10 @@ namespace MijnBibliotheekModels.Data
             }
 
             // ============================
-            // ADMIN GEBRUIKER (TOEGEVOEGD)
+            // GEBRUIKERS & ROLLEN SEEDING
             // ============================
+            
+            // 1. Admin gebruiker
             var admin = await userMgr.FindByEmailAsync("admin@site.nl");
             if (admin == null)
             {
@@ -37,16 +39,36 @@ namespace MijnBibliotheekModels.Data
                 {
                     UserName = "admin@site.nl",
                     Email = "admin@site.nl",
-                    VolledigeNaam = "Beheerder",
+                    VolledigeNaam = "Beheerder Admin",
                     EmailConfirmed = true
                 };
+                await userMgr.CreateAsync(admin, "Admin123!");
+            }
+            if (!await userMgr.IsInRoleAsync(admin, "Admin"))
+            {
+                await userMgr.AddToRoleAsync(admin, "Admin");
+            }
+            if (!await userMgr.IsInRoleAsync(admin, "Medewerker"))
+            {
+                await userMgr.AddToRoleAsync(admin, "Medewerker");
+            }
 
-                var result = await userMgr.CreateAsync(admin, "Admin123!");
-
-                if (result.Succeeded)
+            // 2. Gewone Gebruiker (Lid)
+            var gebruiker = await userMgr.FindByEmailAsync("gebruiker@site.nl");
+            if (gebruiker == null)
+            {
+                gebruiker = new AppUser
                 {
-                    await userMgr.AddToRolesAsync(admin, new[] { "Admin", "Medewerker" });
-                }
+                    UserName = "gebruiker@site.nl",
+                    Email = "gebruiker@site.nl",
+                    VolledigeNaam = "Jan de Gebruiker",
+                    EmailConfirmed = true
+                };
+                await userMgr.CreateAsync(gebruiker, "Gebruiker123!");
+            }
+            if (!await userMgr.IsInRoleAsync(gebruiker, "Lid"))
+            {
+                await userMgr.AddToRoleAsync(gebruiker, "Lid");
             }
 
             // ============================
@@ -91,6 +113,42 @@ namespace MijnBibliotheekModels.Data
                     new Boek { Titel = "Cosmos", Auteur = "Carl Sagan", ISBN = "COS001", CategorieId = wetenschap.Id, IsBeschikbaar = true },
                     new Boek { Titel = "The Selfish Gene", Auteur = "Richard Dawkins", ISBN = "SG001", CategorieId = wetenschap.Id, IsBeschikbaar = true }
                 );
+
+                await db.SaveChangesAsync();
+            }
+
+            // ============================
+            // UITLENINGEN SEEDING
+            // ============================
+            if (!await db.Uitleningen.AnyAsync())
+            {
+                var hp1 = await db.Boeken.FirstOrDefaultAsync(b => b.ISBN == "HP001");
+                var dv1 = await db.Boeken.FirstOrDefaultAsync(b => b.ISBN == "DV001");
+
+                if (hp1 != null && gebruiker != null)
+                {
+                    hp1.IsBeschikbaar = false;
+                    db.Uitleningen.Add(new Uitlening
+                    {
+                        BoekId = hp1.Id,
+                        AppUserId = gebruiker.Id,
+                        StartDatum = DateTime.Now.AddDays(-10),
+                        EindDatum = DateTime.Now.AddDays(11),
+                        IsTeruggebracht = false
+                    });
+                }
+
+                if (dv1 != null && gebruiker != null)
+                {
+                    db.Uitleningen.Add(new Uitlening
+                    {
+                        BoekId = dv1.Id,
+                        AppUserId = gebruiker.Id,
+                        StartDatum = DateTime.Now.AddDays(-30),
+                        EindDatum = DateTime.Now.AddDays(-9),
+                        IsTeruggebracht = true
+                    });
+                }
 
                 await db.SaveChangesAsync();
             }

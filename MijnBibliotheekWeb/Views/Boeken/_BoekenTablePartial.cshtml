@@ -35,17 +35,14 @@
                         @Lang.GetText("TableStatus")@sortIcon("Status")
                     </a>
                 </th>
-                @if (canEdit)
-                {
-                    <th class="text-end">@Lang.GetText("TableActions")</th>
-                }
+                <th class="text-end">Acties</th>
             </tr>
         </thead>
         <tbody>
             @if (!Model.Boeken.Any())
             {
                 <tr>
-                    <td colspan="@(canEdit ? 6 : 5)" class="text-center py-4 text-muted">
+                    <td colspan="6" class="text-center py-4 text-muted">
                         <em>@Lang.GetText("NoBooksFound")</em>
                     </td>
                 </tr>
@@ -59,14 +56,22 @@
                     <td><span class="badge bg-secondary">@(b.Categorie?.Naam ?? "-")</span></td>
                     <td>
                         <span id="badge-status-@b.Id" class="badge @(b.IsBeschikbaar ? "bg-success" : "bg-warning text-dark")">
-                            @(b.IsBeschikbaar ? Lang.GetText("Available") : Lang.GetText("Borrowed"))
+                            @(b.IsBeschikbaar ? "✓ Beschikbaar" : "🔒 Uitgeleend")
                         </span>
                     </td>
-                    @if (canEdit)
-                    {
-                        <td class="text-end">
+                    <td class="text-end">
+                        @if (b.IsBeschikbaar)
+                        {
+                            <form asp-action="Uitlenen" asp-route-id="@b.Id" method="post" class="d-inline me-1">
+                                <button class="btn btn-sm btn-success" type="submit" title="Leen dit boek nu uit">
+                                    📖 Uitlenen
+                                </button>
+                            </form>
+                        }
+                        @if (canEdit)
+                        {
                             <button type="button" onclick="quickToggleBoek(@b.Id)" class="btn btn-sm btn-outline-info me-1" title="@Lang.GetText("QuickToggle")">
-                                ⚡ AJAX
+                                ⚡ Status
                             </button>
                             <a class="btn btn-sm btn-outline-primary me-1" asp-action="Edit" asp-route-id="@b.Id">
                                 @Lang.GetText("Edit")
@@ -76,8 +81,8 @@
                                     @Lang.GetText("Delete")
                                 </button>
                             </form>
-                        </td>
-                    }
+                        }
+                    </td>
                 </tr>
             }
         </tbody>

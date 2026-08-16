@@ -3,8 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MijnBibliotheekModels.Data;
+using MijnBibliotheekModels.Identity;
 using MijnBibliotheekModels.Models;
 using MijnBibliotheekWeb.ViewModels;
+using Microsoft.AspNetCore.Identity;
 
 namespace MijnBibliotheekWeb.Controllers;
 
@@ -14,9 +16,14 @@ public class BoekenController : Controller
 {
     // Databank context veld om te communiceren met de SQLite database
     private readonly BibliotheekContext _db;
+    private readonly UserManager<AppUser> _userMgr;
 
-    // Dependency Injection: De DbContext wordt automatisch ingespoten via de constructor
-    public BoekenController(BibliotheekContext db) => _db = db;
+    // Dependency Injection: De DbContext en UserManager worden automatisch ingespoten
+    public BoekenController(BibliotheekContext db, UserManager<AppUser> userMgr)
+    {
+        _db = db;
+        _userMgr = userMgr;
+    }
 
     // GET: /Boeken/Index
     // Deze methode toont de hoofdpagina met boeken, inclusief zoeken (q), categorie filter (catId), sorteren en paginering
@@ -71,6 +78,44 @@ public class BoekenController : Controller
 
         // Geef een JSON resultaat terug aan de Javascript op de webpagina
         return Json(new { success = true, isBeschikbaar = boek.IsBeschikbaar, id = boek.Id });
+    }
+
+    // POST: /Boeken/Uitlenen/5
+    // Maakt direct een uitlening aan voor de ingelogde gebruiker en navigeert naar de uitleningenpagina
+    [HttpPost]
+    public async Task<IActionResult> Uitlenen(int id)
+    {
+        var boek = await _db.Boeken.FirstOrDefaultAsync(b => b.Id == id && !b.IsDeleted);
+        if (boek == null || !boek.IsBeschikbaar)
+        {
+            TempData["Error"] = "Dit boek is momenteel niet beschikbaar om uit te lenen.";
+            return RedirectToAction(nameof(Index));
+        }
+
+        var user = await _userMgr.GetUserAsync(User);
+        if (user == null)
+        {
+            TempData["Error"] = "Je moet ingelogd zijn om een boek uit te lenen.";
+            return RedirectToAction(nameof(Index));
+        }
+
+        // Zet boek op niet-beschikbaar
+        boek.IsBeschikbaar = false;
+
+        // Maak uitlening aan
+        _db.Uitleningen.Add(new Uitlening
+        {
+            BoekId = boek.Id,
+            AppUserId = user.Id,
+            StartDatum = DateTime.Now,
+            EindDatum = DateTime.Now.AddDays(14),
+            IsTeruggebracht = false
+        });
+
+        await _db.SaveChangesAsync();
+        TempData["Success"] = $"Je hebt '{boek.Titel}' succesvol uitgeleend!";
+
+        return RedirectToAction("Index", "Uitleningen");
     }
 
     // GET: /Boeken/Create
