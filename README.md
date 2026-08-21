@@ -1,6 +1,6 @@
 # Mijn Bibliotheek
 
-Dit is mijn examenproject voor de opleiding **Toegepaste Informatica** aan de **Erasmushogeschool Brussel (EHB)**. 
+Dit is mijn examenproject voor de opleiding **Graduaat programmeren** aan de **Erasmushogeschool Brussel (EHB)**. 
 
 **Mijn Bibliotheek** is een bibliotheeksysteem gebouwd in **.NET 9**. De solution bestaat uit drie applicaties die samenwerken op dezelfde database:
 1. Een **WPF desktopapplicatie** voor lokaal beheer.
