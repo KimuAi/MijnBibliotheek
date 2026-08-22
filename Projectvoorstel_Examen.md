@@ -71,36 +71,3 @@ Het fictieve Cultureel Centrum biedt een uitgebreide collectie boeken en media a
 
 ## 5. Fundamentele Eisen Matrix & Compliance
 
-### Deel 1: ASP.NET Core (.NET Advanced)
-| Criterium / Requirement | Geïmplementeerd In Project | Status |
-|---|---|---|
-| **ASP.NET Core (MVC)** | `MijnBibliotheekWeb` project | ✅ Voltooid |
-| **Database met ≥3 gerelateerde tabellen in Class Library** | `MijnBibliotheekModels` met `Boeken`, `Categorieen`, `Uitleningen` & `AspNetUsers` via EF Core | ✅ Voltooid |
-| **Asynchrone communicatie** | Systematisch `async`/`await` in DbContext, Controllers, Services en API | ✅ Voltooid |
-| **Ergonomische UI met Bootstrap** | Responsief design met Bootstrap 5, badges, alerts en navigation bar | ✅ Voltooid |
-| **Consistente menu-/tabstructuur** | `_Layout.cshtml` met meertalig navigatiemenu en rol-afhankelijke acties | ✅ Voltooid |
-| **Paginering waar zinvol** | Paginering (`CurrentPage`, `TotalPages`, `PageSize`) op `BoekenController` | ✅ Voltooid |
-| **Data-annotaties voor validatie** | `[Required]`, `[MaxLength]`, `[DataType]`, `[Display]` op modellen/viewmodels | ✅ Voltooid |
-| **Selectie- en sorteringsvelden** | Filters (categorie/zoektekst) & multi-kolom sortering op `Boeken/Index` | ✅ Voltooid |
-| **Identity Framework (≥3 rollen)** | `Admin`, `Medewerker`, `Lid` rollen met `AppUser` custom velden | ✅ Voltooid |
-| **Autorisatie** | `[Authorize]` en `[Authorize(Roles = "...")]` op controllers & Razor views | ✅ Voltooid |
-| **Minstens 1x AJAX partial refresh** | Live AJAX search/sort/filter via `IndexPartial` & AJAX status-toggle `QuickToggleAvailability` | ✅ Voltooid |
-| **Extra Middleware** | `CookieLoggingMiddleware` voor cookie-logging en cultuurafhandeling | ✅ Voltooid |
-| **RESTful API methoden** | `AuthController`, `BoekenApiController`, `CategorieenApiController`, `UitleningenApiController` | ✅ Voltooid |
-| **VOLLEDIGE meertaligheid (≥2 talen)** | `LanguageService` met Nederlands (NL) en Engels (EN) + taal-wisselaar cookie | ✅ Voltooid |
-| **Foutloos werken & foutopvang** | Exception middleware, alert banners (`TempData["Success"]`/`TempData["Error"]`) | ✅ Voltooid |
-
-### Deel 2: MAUI (.NET Project)
-| Criterium / Requirement | Geïmplementeerd In Project | Status |
-|---|---|---|
-| **Realisatie in MAUI** | `MijnBibliotheekMAUI` project in .NET 9 | ✅ Voltooid |
-| **API-databron** | Consumptie van `MijnBibliotheekWeb` REST API via `HttpClient` met cookie-container | ✅ Voltooid |
-| **Lokale "lite" databank voor offline gebruik** | `LocalDbService` met SQLite (`sqlite-net-pcl`) voor offline opslag en automatisch herstel bij netwerkuitval | ✅ Voltooid |
-| **Class Library hergebruik** | Modellen en DTO structuur gedeeld met `MijnBibliotheekModels` | ✅ Voltooid |
-| **Analyse met User Stories & Pages** | Opgenomen in dit projectvoorstel | ✅ Voltooid |
-
----
-
-## 6. Conclusie
-
-Het project **Bibliotheekbeheer - Cultureel Centrum** voldoet aan alle voorwaarden en fundamentele eisen van zowel de **.NET Advanced** examenopdracht als de **.NET Project (MAUI)** opdracht. De combinatie van een robuuste EF Core Class Library, een meertalige en responsieve ASP.NET Core webapplicatie met AJAX en REST API, en een offline-capable MAUI mobiele app vormt een compleet en kwalitatief hoogstaand examenwerkstuk.
