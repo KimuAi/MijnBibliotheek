@@ -67,7 +67,3 @@ Het fictieve Cultureel Centrum biedt een uitgebreide collectie boeken en media a
 3. **CategorieenPage (`CategorieenPage.xaml`)**: Categorieënoverzicht met filtermogelijkheid.
 4. **UitleningenPage (`UitleningenPage.xaml`)**: Overzicht van de eigen uitleningen van de ingelogde gebruiker.
 
----
-
-## 5. Fundamentele Eisen Matrix & Compliance
-
